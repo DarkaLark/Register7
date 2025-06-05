@@ -1,74 +1,70 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+
 using UnityEngine;
 
 [SelectionBase]
 public class CharacterMovementBehaviour : MonoBehaviour
 {
-    [SerializeField]
-    float speed = 2f;
-    [SerializeField]
-    float sprintSpeed = 5f;
-    [SerializeField]
-    float sprintDuration = 1f;
-    [SerializeField]
-    float sprintCooldown = 3f;
-    [SerializeField]
-    Rigidbody rb;
-    Vector3 inputVector = new Vector3(0f, 0f, 0f);
-    [SerializeField]
-    float rotationSpeed = 60f;
-    [SerializeField]
-    float JumpForce = 3f;
-    [SerializeField]
-    Animator animator;
+    [SerializeField] private float _speed = 2f;
+    [SerializeField] private float _sprintSpeed = 5f;
+    [SerializeField] private float _sprintDuration = 1f;
+    [SerializeField] private float _sprintCooldown = 3f;
+    [SerializeField] private Rigidbody _rb;
+    [SerializeField] private float _rotationSpeed = 60f;
+    [SerializeField] private float _jumpForce = 3f;
+    [SerializeField] private Animator _animator;
 
-    private float sprintTime = 0f;
-    private float cooldownTime = 0f;
-    private bool isSprinting = false;
+    [Space(5)]
+    [SerializeField] private DialogueStateGameEvent _onDialogueChanged;
+    [SerializeField] private GameStateGameEvent _onGameStateChanged;
 
-    private Vector3 lastMovementDirection = Vector3.forward; // NEW: store last nonzero direction
+    
+    private Vector3 _inputVector = new Vector3(0f, 0f, 0f);
+    private bool _canMove = true;
 
-    private void OnDisable()
+    private float _sprintTime = 0f;
+    private float _sprintCooldownTime = 0f;
+    private bool _isSprinting = false;
+
+
+    void OnEnable()
     {
-        inputVector = Vector3.zero;
+        _onDialogueChanged.Register(HandleDialogueStateChange);
+        _onGameStateChanged.Register(HandleGameStateChange);
+    }
+
+    void OnDisable()
+    {
+        _onDialogueChanged.Unregister(HandleDialogueStateChange);
+        _onGameStateChanged.Unregister(HandleGameStateChange);
+        _inputVector = Vector3.zero;
+    }
+
+    private void HandleDialogueStateChange(DialogueState state)
+    {
+        _canMove = state == DialogueState.None;
+    }
+
+    private void HandleGameStateChange(GameState state)
+    {
+        _canMove = state == GameState.Playing;
     }
 
     void Update()
     {
-        if (cooldownTime > 0f)
-        {
-            cooldownTime -= Time.deltaTime;
-        }
+        if (!_canMove) return;
 
-        if (cooldownTime <= 0f && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
-        {
-            if (sprintTime < sprintDuration)
-            {
-                isSprinting = true;
-                sprintTime += Time.deltaTime;
-            }
-            else
-            {
-                isSprinting = false;
-                cooldownTime = sprintCooldown;
-                sprintTime = 0f;
-            }
-        }
-        else
-        {
-            isSprinting = false;
-        }
+        ReduceSprintCD();
 
-        inputVector = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
+        TrySprinting();
+        TryJumping();
+ 
+        _inputVector = GetNormalizedInput();
 
-        // Update last movement direction only if input exists
-        if (inputVector.magnitude > 0f)
-        {
-            lastMovementDirection = inputVector;
-        }
+    }
 
+    #region Update() funcs
+    private void TryJumping()
+    {
         if (Input.GetButtonDown("Jump"))
         {
             if (Physics.Raycast(transform.position + Vector3.up, Vector3.down, 1.2f))
@@ -77,29 +73,101 @@ public class CharacterMovementBehaviour : MonoBehaviour
             }
         }
     }
+    
+    void Jump()
+    {
+        // Apply jump force
+        _rb.AddForce(0f, _jumpForce, 0f, ForceMode.Impulse);
+    }
+
+    private void TrySprinting()
+    {
+        // If we're not in cooldown and the player is pressing shift and there's no sprinting time left
+        if (_sprintCooldownTime <= 0f && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
+        {
+            if (_sprintTime < _sprintDuration)
+            {
+                // Sprinting allowed
+                _isSprinting = true;
+                _sprintTime += Time.deltaTime;
+            }
+            else
+            {
+                // Sprint time is up, start cooldown
+                _isSprinting = false;
+                _sprintCooldownTime = _sprintCooldown;
+                _sprintTime = 0f;
+            }
+        }
+        else
+        {
+            // If not sprinting, use normal speed
+            _isSprinting = false;
+        }
+    }
+
+    private void ReduceSprintCD()
+    {
+        if (!_canMove) return;
+
+        if (_sprintCooldownTime > 0f)
+        {
+            _sprintCooldownTime -= Time.deltaTime;
+        }
+    }
+
+    private Vector3 GetNormalizedInput()
+    {
+        Vector3 normalizedMovement;
+
+        if (_canMove)
+            normalizedMovement = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
+        else
+            normalizedMovement = Vector3.zero;
+
+        return normalizedMovement;
+    }
+    #endregion
 
     private void FixedUpdate()
     {
-        float currentSpeed = isSprinting ? sprintSpeed : speed;
+        Vector3 targetVelocity = GetTargetVelocity();
+        targetVelocity = RotateCharacterOnInput(targetVelocity);
 
-        Vector3 targetVelocity = inputVector * currentSpeed;
-        targetVelocity.y = rb.linearVelocity.y;
+        _rb.linearVelocity = _canMove ? targetVelocity : Vector3.zero;
 
-        rb.linearVelocity = targetVelocity;
+        AnimatePlayer(targetVelocity);
+    }
 
-        // Use last nonzero movement direction for rotation
-        if (lastMovementDirection.magnitude > 0f)
+    #region FixedUpdate() funcs
+    private void AnimatePlayer(Vector3 targetVelocity)
+    {
+        float animateSpeed = _canMove ? targetVelocity.magnitude : 0f;
+        _animator.SetFloat("Speed", animateSpeed);
+    }
+
+    private Vector3 GetTargetVelocity()
+    {
+        float currentSpeed = _isSprinting ? _sprintSpeed : _speed;
+
+        Vector3 targetVelocity = _inputVector * currentSpeed;
+        targetVelocity.y = _rb.linearVelocity.y;
+
+        return targetVelocity;
+    }
+
+    private Vector3 RotateCharacterOnInput(Vector3 targetVelocity)
+    {
+        Vector3 planarVelocity = Vector3.ProjectOnPlane(targetVelocity, Vector3.up);
+        if (planarVelocity.sqrMagnitude > 0.0001f)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(lastMovementDirection, Vector3.up));
-            Quaternion smoothRotation = Quaternion.RotateTowards(rb.rotation, targetRotation, rotationSpeed);
-            rb.MoveRotation(smoothRotation);
+            Quaternion targetRotation = Quaternion.LookRotation(planarVelocity);
+            Quaternion smoothRotation = Quaternion.RotateTowards(_rb.rotation, targetRotation, _rotationSpeed);
+            _rb.MoveRotation(smoothRotation);
         }
 
-        animator.SetFloat("Speed", targetVelocity.magnitude);
+        return targetVelocity;
     }
+    #endregion
 
-    void Jump()
-    {
-        rb.AddForce(0f, JumpForce, 0f, ForceMode.Impulse);
-    }
 }

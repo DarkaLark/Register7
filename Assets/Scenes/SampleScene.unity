@@ -183,7 +183,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -579,14 +579,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 564408680606c2640bef6cc6587b9f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  sprintSpeed: 5
-  sprintDuration: 1
-  sprintCooldown: 3
-  rb: {fileID: 1511160931}
-  rotationSpeed: 60
-  JumpForce: 3
-  animator: {fileID: 1031208887}
+  _speed: 2
+  _sprintSpeed: 5
+  _sprintDuration: 1
+  _sprintCooldown: 3
+  _rb: {fileID: 0}
+  _rotationSpeed: 60
+  _jumpForce: 3
+  _animator: {fileID: 0}
+  _onDialogueChanged: {fileID: 0}
+  _onGameStateChanged: {fileID: 0}
 --- !u!136 &1511160933
 CapsuleCollider:
   m_ObjectHideFlags: 0

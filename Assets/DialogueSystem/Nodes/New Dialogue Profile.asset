@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d3176f98664572478847967ab7a7e7b, type: 3}
-  m_Name: LuluNice
+  m_Script: {fileID: 11500000, guid: 87d87d2b199f4c24b85ce33f09f0b456, type: 3}
+  m_Name: New Dialogue Profile
   m_EditorClassIdentifier: 
-  speakerName: 
-  voiceBlip: {fileID: 0}
-  lines:
-  - Have you found it??
-  choices: []
+  npcID: Tiger
+  dialogueBranches:
+  - DialogueFlags:
+      RequiredFlag: 
+      SetFlagAfter: 
+    Dialogue: {fileID: 11400000, guid: d2541eaba15afab4d9ca38236488b984, type: 2}

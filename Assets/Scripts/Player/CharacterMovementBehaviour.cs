@@ -14,6 +14,7 @@ public class CharacterMovementBehaviour : MonoBehaviour
     [SerializeField] private Animator _animator;
 
     [Space(5)]
+    [SerializeField] private PlayerMovementGameEvent _onMoveInput;
     [SerializeField] private DialogueStateGameEvent _onDialogueChanged;
     [SerializeField] private GameStateGameEvent _onGameStateChanged;
 
@@ -30,12 +31,14 @@ public class CharacterMovementBehaviour : MonoBehaviour
     {
         _onDialogueChanged.Register(HandleDialogueStateChange);
         _onGameStateChanged.Register(HandleGameStateChange);
+        _onMoveInput.Register(HandleMoveInput);
     }
 
     void OnDisable()
     {
         _onDialogueChanged.Unregister(HandleDialogueStateChange);
         _onGameStateChanged.Unregister(HandleGameStateChange);
+        _onMoveInput.Unregister(HandleMoveInput);
         _inputVector = Vector3.zero;
     }
 
@@ -49,6 +52,14 @@ public class CharacterMovementBehaviour : MonoBehaviour
         _canMove = state == GameState.Playing;
     }
 
+    private void HandleMoveInput(Vector2 input)
+    {
+        if (_canMove)
+            _inputVector = new Vector3(input.x, 0f, input.y);
+        else
+            _inputVector = Vector3.zero;
+    }
+
     void Update()
     {
         if (!_canMove) return;
@@ -57,9 +68,6 @@ public class CharacterMovementBehaviour : MonoBehaviour
 
         TrySprinting();
         TryJumping();
- 
-        _inputVector = GetNormalizedInput();
-
     }
 
     #region Update() funcs
@@ -109,18 +117,6 @@ public class CharacterMovementBehaviour : MonoBehaviour
         {
             _sprintCooldownTime -= Time.deltaTime;
         }
-    }
-
-    private Vector3 GetNormalizedInput()
-    {
-        Vector3 normalizedMovement;
-
-        if (_canMove)
-            normalizedMovement = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
-        else
-            normalizedMovement = Vector3.zero;
-
-        return normalizedMovement;
     }
     #endregion
 

@@ -6,6 +6,8 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] private GameEvent _onEKeyPress;
     [SerializeField] private PlayerMovementGameEvent _onMoveInput;
 
+    public Vector2 MoveInput { get; private set; }
+
     private PlayerInput _playerInput;
 
     private InputAction _playerInteract;
@@ -22,6 +24,7 @@ public class PlayerInputHandler : MonoBehaviour
     void OnEnable()
     {
         _playerInteract.performed += OnInteract;
+
         _playerMove.performed += OnMove;
         _playerMove.canceled += OnMove;
     }
@@ -29,8 +32,11 @@ public class PlayerInputHandler : MonoBehaviour
     void OnDisable()
     {
         _playerInteract.performed -= OnInteract;
+
         _playerMove.performed -= OnMove;
         _playerMove.canceled -= OnMove;
+
+        MoveInput = Vector2.zero;
     }
 
 
@@ -42,6 +48,6 @@ public class PlayerInputHandler : MonoBehaviour
     private void OnMove(InputAction.CallbackContext context)
     {
         Vector2 input = context.ReadValue<Vector2>();
-        _onMoveInput.Raise(input);
+        MoveInput = input;
     }
 }

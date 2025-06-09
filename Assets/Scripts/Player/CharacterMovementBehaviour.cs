@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [SelectionBase]
 public class CharacterMovementBehaviour : MonoBehaviour
@@ -14,11 +15,13 @@ public class CharacterMovementBehaviour : MonoBehaviour
     [SerializeField] private Animator _animator;
 
     [Space(5)]
-    [SerializeField] private PlayerMovementGameEvent _onMoveInput;
+    [SerializeField] private PlayerInputHandler _inputHandler;
     [SerializeField] private DialogueStateGameEvent _onDialogueChanged;
     [SerializeField] private GameStateGameEvent _onGameStateChanged;
 
-    
+    [Space(5)]
+    [SerializeField] private Camera _camera;
+
     private Vector3 _inputVector = new Vector3(0f, 0f, 0f);
     private bool _canMove = true;
 
@@ -26,19 +29,16 @@ public class CharacterMovementBehaviour : MonoBehaviour
     private float _sprintCooldownTime = 0f;
     private bool _isSprinting = false;
 
-
     void OnEnable()
     {
         _onDialogueChanged.Register(HandleDialogueStateChange);
         _onGameStateChanged.Register(HandleGameStateChange);
-        _onMoveInput.Register(HandleMoveInput);
     }
 
     void OnDisable()
     {
         _onDialogueChanged.Unregister(HandleDialogueStateChange);
         _onGameStateChanged.Unregister(HandleGameStateChange);
-        _onMoveInput.Unregister(HandleMoveInput);
         _inputVector = Vector3.zero;
     }
 
@@ -52,14 +52,6 @@ public class CharacterMovementBehaviour : MonoBehaviour
         _canMove = state == GameState.Playing;
     }
 
-    private void HandleMoveInput(Vector2 input)
-    {
-        if (_canMove)
-            _inputVector = new Vector3(input.x, 0f, input.y);
-        else
-            _inputVector = Vector3.zero;
-    }
-
     void Update()
     {
         if (!_canMove) return;
@@ -68,6 +60,8 @@ public class CharacterMovementBehaviour : MonoBehaviour
 
         TrySprinting();
         TryJumping();
+
+        _inputVector = GetMovementDirectionRelativeToCamera();
     }
 
     #region Update() funcs
@@ -81,7 +75,7 @@ public class CharacterMovementBehaviour : MonoBehaviour
             }
         }
     }
-    
+
     void Jump()
     {
         _rb.AddForce(0f, _jumpForce, 0f, ForceMode.Impulse);
@@ -110,6 +104,7 @@ public class CharacterMovementBehaviour : MonoBehaviour
     }
 
     private void ReduceSprintCD()
+
     {
         if (!_canMove) return;
 
@@ -118,6 +113,26 @@ public class CharacterMovementBehaviour : MonoBehaviour
             _sprintCooldownTime -= Time.deltaTime;
         }
     }
+
+    private Vector3 GetMovementDirectionRelativeToCamera()
+    {
+        Vector2 _input = _inputHandler.MoveInput;
+        if (_input.sqrMagnitude > 0.01f)
+        {
+            Vector3 camForward = _camera.transform.forward;
+            Vector3 camRight = _camera.transform.right;
+
+            camForward.y = 0f;
+            camRight.y = 0f;
+            camForward.Normalize();
+            camRight.Normalize();
+
+            return camForward * _input.y + camRight * _input.x;
+        }
+        else
+            return Vector3.zero;
+    }
+
     #endregion
 
     private void FixedUpdate()
@@ -131,12 +146,6 @@ public class CharacterMovementBehaviour : MonoBehaviour
     }
 
     #region FixedUpdate() funcs
-    private void AnimatePlayer(Vector3 targetVelocity)
-    {
-        float animateSpeed = _canMove ? targetVelocity.magnitude : 0f;
-        _animator.SetFloat("Speed", animateSpeed);
-    }
-
     private Vector3 GetTargetVelocity()
     {
         float currentSpeed = _isSprinting ? _sprintSpeed : _speed;
@@ -158,6 +167,12 @@ public class CharacterMovementBehaviour : MonoBehaviour
         }
 
         return targetVelocity;
+    }
+    
+    private void AnimatePlayer(Vector3 targetVelocity)
+    {
+        float animateSpeed = _canMove ? targetVelocity.magnitude : 0f;
+        _animator.SetFloat("Speed", animateSpeed);
     }
     #endregion
 

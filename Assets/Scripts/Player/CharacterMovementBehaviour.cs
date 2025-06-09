@@ -76,24 +76,20 @@ public class CharacterMovementBehaviour : MonoBehaviour
     
     void Jump()
     {
-        // Apply jump force
         _rb.AddForce(0f, _jumpForce, 0f, ForceMode.Impulse);
     }
 
     private void TrySprinting()
     {
-        // If we're not in cooldown and the player is pressing shift and there's no sprinting time left
         if (_sprintCooldownTime <= 0f && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
         {
             if (_sprintTime < _sprintDuration)
             {
-                // Sprinting allowed
                 _isSprinting = true;
                 _sprintTime += Time.deltaTime;
             }
             else
             {
-                // Sprint time is up, start cooldown
                 _isSprinting = false;
                 _sprintCooldownTime = _sprintCooldown;
                 _sprintTime = 0f;
@@ -101,7 +97,6 @@ public class CharacterMovementBehaviour : MonoBehaviour
         }
         else
         {
-            // If not sprinting, use normal speed
             _isSprinting = false;
         }
     }

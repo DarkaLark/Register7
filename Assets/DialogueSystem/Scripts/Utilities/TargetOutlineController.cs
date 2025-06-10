@@ -21,7 +21,8 @@ public class TargetOutlineController : MonoBehaviour
             lastOutline.ShowOutline(false);
         }
 
-        if (target != null && target.TryGetComponent(out OutlineTarget newOutline))
+        if (target != null && target.TryGetComponent(out OutlineTarget newOutline)
+        && newOutline is MonoBehaviour mb && mb.enabled)
         {
             newOutline.ShowOutline(true);
         }

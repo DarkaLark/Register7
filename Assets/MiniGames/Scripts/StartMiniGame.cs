@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class StartMiniGame : MonoBehaviour, IInteractable
 {
-    [SerializeField] GameObject _miniGame;
+    [SerializeField] private GameObject _miniGame;
     [SerializeField] private GameStateGameEvent _onGameStateChanged;
 
     public void Interact()

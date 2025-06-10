@@ -28,7 +28,8 @@ public class PlayerDialogueInteract : MonoBehaviour
             return;
         }
 
-        if (bestTarget.TryGetComponent(out IInteractable interactable))
+        if (bestTarget.TryGetComponent(out IInteractable interactable)
+        && interactable is MonoBehaviour mb && mb.enabled)
         {
             interactable.Interact();
         }

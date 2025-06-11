@@ -22,7 +22,7 @@ public class CharacterMovementBehaviour : MonoBehaviour
     [Space(5)]
     [SerializeField] private Camera _camera;
 
-    private Vector3 _inputVector = new Vector3(0f, 0f, 0f);
+    private Vector3 _inputVector = new(0f, 0f, 0f);
     private bool _canMove = true;
 
     private float _sprintTime = 0f;

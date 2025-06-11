@@ -1,7 +1,7 @@
 public enum PossibleItems
 {
-    Pizza,
     Hotdog,
-    Sandwich,
+    Pizza,
+    IceCream,
     Drink
 }

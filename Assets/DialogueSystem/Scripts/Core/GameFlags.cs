@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public static class GameFlags
 {
     public static event Action<string> OnFlagSet;
-    private static HashSet<string> _flags = new HashSet<string>();
+    private static HashSet<string> _flags = new();
 
     public static void SetFlag(string flag)
     {

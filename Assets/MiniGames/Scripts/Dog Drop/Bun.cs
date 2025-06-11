@@ -6,7 +6,7 @@ public class Bun : MonoBehaviour
     private Transform _backBun;
     [SerializeField] Transform _frontBun;
     [SerializeField] int _moveSpeed = 1000;
-    private Vector3 _newPosition = new Vector3();
+    private Vector3 _newPosition = new();
 
     enum TravelingDirection { Left, Right }
     private TravelingDirection _currentDirection;

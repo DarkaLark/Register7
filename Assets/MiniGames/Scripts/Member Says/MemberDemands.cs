@@ -18,6 +18,8 @@ public class MemberDemands : MonoBehaviour
     private float _delayBetweenItems = 1f;
     private float _blankSpaceTime = 0.2f;
 
+    [SerializeField] private TurnStateGameEvent _onTurnStateChanged;
+
     void Start()
     {
         _numberOfItems = Mathf.Min(_numberOfItems + 1, _maxItems);
@@ -36,6 +38,7 @@ public class MemberDemands : MonoBehaviour
 
         StartCoroutine(PresentItems());
 
+        _onTurnStateChanged.Raise(TurnState.Player);
         _numberOfItems++;
     }
 
@@ -60,12 +63,10 @@ public class MemberDemands : MonoBehaviour
 
     private void PlayAudio(ItemInformation currentItem)
     {
-        Debug.Log("Attempting to play audio");
         if (_audioSource != null && currentItem != null)
         {
             _audioSource.pitch = Random.Range(0.95f, 1.05f);
             _audioSource.PlayOneShot(currentItem.itemSound);
-            Debug.Log("Audio played");
         }
     }
 }

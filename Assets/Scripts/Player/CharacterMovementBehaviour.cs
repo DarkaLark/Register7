@@ -18,6 +18,7 @@ public class CharacterMovementBehaviour : MonoBehaviour
     [SerializeField] private PlayerInputHandler _inputHandler;
     [SerializeField] private DialogueStateGameEvent _onDialogueChanged;
     [SerializeField] private GameStateGameEvent _onGameStateChanged;
+    [SerializeField] private BoolGameEvent _onSprintDown;
 
     [Space(5)]
     [SerializeField] private Camera _camera;
@@ -33,12 +34,15 @@ public class CharacterMovementBehaviour : MonoBehaviour
     {
         _onDialogueChanged.Register(HandleDialogueStateChange);
         _onGameStateChanged.Register(HandleGameStateChange);
+        _onSprintDown.Register(TrySprinting);
     }
 
     void OnDisable()
     {
         _onDialogueChanged.Unregister(HandleDialogueStateChange);
         _onGameStateChanged.Unregister(HandleGameStateChange);
+        _onSprintDown.Unregister(TrySprinting);
+
         _inputVector = Vector3.zero;
     }
 
@@ -58,7 +62,6 @@ public class CharacterMovementBehaviour : MonoBehaviour
 
         ReduceSprintCD();
 
-        TrySprinting();
         TryJumping();
 
         _inputVector = GetMovementDirectionRelativeToCamera();
@@ -81,9 +84,9 @@ public class CharacterMovementBehaviour : MonoBehaviour
         _rb.AddForce(0f, _jumpForce, 0f, ForceMode.Impulse);
     }
 
-    private void TrySprinting()
+    private void TrySprinting(bool sprintDown)
     {
-        if (_sprintCooldownTime <= 0f && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
+        if (_sprintCooldownTime <= 0f && sprintDown)
         {
             if (_sprintTime < _sprintDuration)
             {

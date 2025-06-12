@@ -6,18 +6,21 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] private GameEvent _onInteractPress;
     [SerializeField] private GameEvent _onAdvanceDialoguePress;
     [SerializeField] private PlayerMovementGameEvent _onMoveInput;
+    [SerializeField] private BoolGameEvent _onSprintDown;
 
     [SerializeField] private DialogueStateGameEvent _onDialogueStateChanged;
     private bool _canInteract = true;
     private bool _canAdvanceDialogue = false;
 
     public Vector2 MoveInput { get; private set; }
+    private bool _isSprinting = false;
 
     private PlayerInput _playerInput;
 
     private InputAction _playerInteract;
     private InputAction _playerMove;
     private InputAction _playerAdvanceDialogue;
+    private InputAction _playerSprint;
 
     void Awake()
     {
@@ -26,6 +29,7 @@ public class PlayerInputHandler : MonoBehaviour
         _playerInteract = _playerInput.actions["Interact"];
         _playerMove = _playerInput.actions["Move"];
         _playerAdvanceDialogue = _playerInput.actions["Advance Dialogue"];
+        _playerSprint = _playerInput.actions["Sprint"];
 
         _onDialogueStateChanged.Register(HandleDialogueStateChange);
     }
@@ -43,6 +47,9 @@ public class PlayerInputHandler : MonoBehaviour
         _playerMove.canceled += OnMove;
 
         _playerAdvanceDialogue.performed += OnAdvanceDialogue;
+
+        _playerSprint.performed += OnSprint;
+        _playerSprint.canceled += OnSprint;
     }
 
     void OnDisable()
@@ -53,6 +60,9 @@ public class PlayerInputHandler : MonoBehaviour
         _playerMove.canceled -= OnMove;
 
         _playerAdvanceDialogue.performed -= OnAdvanceDialogue;
+
+        _playerSprint.performed -= OnSprint;
+        _playerSprint.canceled -= OnSprint;
 
         MoveInput = Vector2.zero;
     }
@@ -74,6 +84,12 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (_canAdvanceDialogue)
             _onAdvanceDialoguePress.Raise();
+    }
+
+    private void OnSprint(InputAction.CallbackContext context)
+    {
+        _isSprinting = context.ReadValue<float>() > 0.1f;
+        _onSprintDown.Raise(_isSprinting);
     }
 
     private void HandleDialogueStateChange(DialogueState newState)

@@ -252,6 +252,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1558828113}
     - target: {fileID: 4642764939547853561, guid: 219c9668b23cb2540850b6dba7881d28, type: 3}
+      propertyPath: _onAdvanceDialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: 00cfe857662703f4994a1331102badee, type: 2}
+    - target: {fileID: 4642764939547853561, guid: 219c9668b23cb2540850b6dba7881d28, type: 3}
       propertyPath: _onDialogueChanged
       value: 
       objectReference: {fileID: 11400000, guid: f87a9f2288713bf42b1777efb2e95765, type: 2}
@@ -1172,10 +1176,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5298106972402467083, guid: 61461e81498d13f4c9ee89b29c07dda8, type: 3}
+      propertyPath: _onSprintDown
+      value: 
+      objectReference: {fileID: 11400000, guid: a43c841eb6046e1488f15597a1233641, type: 2}
+    - target: {fileID: 5916703149891232678, guid: 61461e81498d13f4c9ee89b29c07dda8, type: 3}
+      propertyPath: _onSprintDown
+      value: 
+      objectReference: {fileID: 11400000, guid: a43c841eb6046e1488f15597a1233641, type: 2}
+    - target: {fileID: 5916703149891232678, guid: 61461e81498d13f4c9ee89b29c07dda8, type: 3}
+      propertyPath: _onInteractPress
+      value: 
+      objectReference: {fileID: 11400000, guid: a8be889c21aa0dd4eab5dc8dd32b7b16, type: 2}
     - target: {fileID: 5916703149891232678, guid: 61461e81498d13f4c9ee89b29c07dda8, type: 3}
       propertyPath: _onGameStateChanged
       value: 
       objectReference: {fileID: 11400000, guid: 4cb2b1ea340c5e344839b14c8abd1402, type: 2}
+    - target: {fileID: 5916703149891232678, guid: 61461e81498d13f4c9ee89b29c07dda8, type: 3}
+      propertyPath: _onAdvanceDialoguePress
+      value: 
+      objectReference: {fileID: 11400000, guid: 00cfe857662703f4994a1331102badee, type: 2}
+    - target: {fileID: 5916703149891232678, guid: 61461e81498d13f4c9ee89b29c07dda8, type: 3}
+      propertyPath: _onDialogueStateChanged
+      value: 
+      objectReference: {fileID: 11400000, guid: f87a9f2288713bf42b1777efb2e95765, type: 2}
+    - target: {fileID: 9031858064214987830, guid: 61461e81498d13f4c9ee89b29c07dda8, type: 3}
+      propertyPath: _onInteractPress
+      value: 
+      objectReference: {fileID: 11400000, guid: a8be889c21aa0dd4eab5dc8dd32b7b16, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

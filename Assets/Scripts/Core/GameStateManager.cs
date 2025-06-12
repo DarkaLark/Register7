@@ -27,10 +27,4 @@ public class GameStateManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    public void SetGameState(GameState newState)
-    {
-        CurrentGameState = newState;
-        Debug.Log($"Game state changed to: {CurrentGameState}");
-    }
 }

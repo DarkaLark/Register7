@@ -24,6 +24,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue State Handler")]
     [Space(5)]
     [SerializeField] private DialogueStateGameEvent _onDialogueChanged;
+    [SerializeField] private GameEvent _onAdvanceDialogue;
 
     private float _blipTimer = 0f;
     private AudioClip _currentBlip;
@@ -45,6 +46,16 @@ public class DialogueManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    void OnEnable()
+    {
+        _onAdvanceDialogue.Register(TryAdvancingDialogue);   
+    }
+
+    void OnDisable()
+    {
+        _onAdvanceDialogue.Unregister(TryAdvancingDialogue);   
     }
 
     public void StartDialogue(DialogueNode startingNode, string overrideSpeaker = null)

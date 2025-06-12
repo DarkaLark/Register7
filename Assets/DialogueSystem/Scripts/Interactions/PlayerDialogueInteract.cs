@@ -4,21 +4,22 @@ public class PlayerDialogueInteract : MonoBehaviour
 {
     [SerializeField] private InteractableDetector _detector;
 
-    [SerializeField] private GameEvent _onEKeyPress;
+    [SerializeField] private GameEvent _onInteractPress;
 
     void OnEnable()
     {
-        _onEKeyPress.Register(InteractWithBestTarget);
+        _onInteractPress.Register(InteractWithBestTarget);
     }
 
     void OnDisable()
     {
-        _onEKeyPress.Unregister(InteractWithBestTarget);
+        _onInteractPress.Unregister(InteractWithBestTarget);
     }
 
     private void InteractWithBestTarget()
     {
         if (_detector == null) return;
+
         _detector.Scan();
 
         GameObject bestTarget = _detector.BestTarget;

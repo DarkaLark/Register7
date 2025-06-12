@@ -11,7 +11,7 @@ public class DialogueStateManager : MonoBehaviour
 {
     public static DialogueStateManager Instance { get;  private set; }
 
-    public static DialogueState CurrentState { get; private set; } = DialogueState.None;
+    public DialogueState CurrentState { get; private set; } = DialogueState.None;
 
     [SerializeField] private DialogueStateGameEvent _onDialogueStateChanged;
 

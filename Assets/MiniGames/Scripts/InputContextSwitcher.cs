@@ -22,7 +22,6 @@ public class InputContextSwitcher : MonoBehaviour
 
     private void Switch(GameState state)
     {
-        Debug.Log("Switching control settings to: " + state);
         if (state == GameState.Playing)
             SwitchToPlayerInput();
         else

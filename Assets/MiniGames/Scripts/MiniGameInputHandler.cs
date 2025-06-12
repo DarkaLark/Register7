@@ -27,7 +27,6 @@ public class MiniGameInputHandler : MonoBehaviour
 
     private void OnDrop(InputAction.CallbackContext context)
     {
-        Debug.Log("OnDrop called");
         _onDropHotdogPress.Raise();
     }
 }

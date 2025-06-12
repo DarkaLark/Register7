@@ -15,10 +15,23 @@ public class Hotdog : MonoBehaviour
     [SerializeField] private GameObject _bun;
     [SerializeField] private GameObject _backButton;
 
+    [SerializeField] private GameEvent _onHotdogDrop;
+
     private float _speedTimer = .2f;
     private bool _drop = false;
     private bool _weinerTouchingBun = false;
     private float _outOfBoundsOffset = -100f;
+
+    void OnEnable()
+    {
+        Debug.Log("OnEnable called in: Hotdog");
+        _onHotdogDrop.Register(DropHotdog);
+    }
+
+    void OnDisable()
+    {
+        _onHotdogDrop.Unregister(DropHotdog);
+    }
 
     void Start()
     {
@@ -28,14 +41,16 @@ public class Hotdog : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-            _drop = true;
-
         if (_drop && !_weinerTouchingBun)
         {
             Fall();
             AccelerateHotdogSpeed();
-        }
+        }  
+    }
+
+    void DropHotdog()
+    {
+        _drop = true;
     }
 
     void OnTriggerEnter2D(Collider2D other)

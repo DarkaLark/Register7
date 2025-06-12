@@ -7,7 +7,7 @@ public class ExitMiniGame : MonoBehaviour
 
     public void Exit()
     {
-        Destroy(_miniGame);
         _onGameStateChanged.Raise(GameState.Playing);
+        Destroy(_miniGame);
     }
 }

@@ -416,6 +416,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9057545933734711980}
+  - {fileID: 6107210741490437882}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3011658579142887442
@@ -560,6 +561,7 @@ MonoBehaviour:
   _gravity: 1000
   _bun: {fileID: 8288455182947463346}
   _backButton: {fileID: 386339515834395931}
+  _onHotdogDrop: {fileID: 11400000, guid: 766499a50a1e7534eb2f10cccb84bb2f, type: 2}
 --- !u!61 &6328283699057687528
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -633,6 +635,67 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &6419017407640229087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6107210741490437882}
+  - component: {fileID: 873234857742030420}
+  - component: {fileID: 8794985817540706855}
+  m_Layer: 0
+  m_Name: Mini Game Input Handler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6107210741490437882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6419017407640229087}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1619.0989, y: 374.04248, z: 622.4475}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7325157653120891165}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &873234857742030420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6419017407640229087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b06c1c6d1a9484697c06745ec3e2de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onDropHotdogPress: {fileID: 11400000, guid: 766499a50a1e7534eb2f10cccb84bb2f, type: 2}
+  _playerInput: {fileID: 0}
+--- !u!114 &8794985817540706855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6419017407640229087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8fd9b380a2556842b732b1dbb0fa408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputAsset: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
+  _onGameStateChanged: {fileID: 11400000, guid: 4cb2b1ea340c5e344839b14c8abd1402, type: 2}
 --- !u!1 &8288455182947463346
 GameObject:
   m_ObjectHideFlags: 0

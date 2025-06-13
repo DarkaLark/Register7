@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d3176f98664572478847967ab7a7e7b, type: 3}
+  m_Name: Kimmy Node
+  m_EditorClassIdentifier: 
+  speakerName: 
+  voiceBlip: {fileID: 0}
+  lines:
+  - Hello friend.
+  - Can I ask you a question?
+  choices:
+  - choice: Sure
+    nextNode: {fileID: 11400000, guid: 7260654af1775a745b480f6d136b09d8, type: 2}
+    dialogueFlags:
+      RequiredFlag: 
+      SetFlagAfter: 
+  - choice: Nah
+    nextNode: {fileID: 11400000, guid: 5038f4548835b95469564d6c10f346a3, type: 2}
+    dialogueFlags:
+      RequiredFlag: 
+      SetFlagAfter: 

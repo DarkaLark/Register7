@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Hotdog : MonoBehaviour
 {
@@ -62,6 +62,7 @@ public class Hotdog : MonoBehaviour
             _currentDropSpeed = 0;
             transform.SetParent(other.transform, true);
             _backButton.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(_backButton);
         }
     }
 
@@ -74,6 +75,7 @@ public class Hotdog : MonoBehaviour
             backButtonText.text = "Wiener On The Floor!";
             
             _backButton.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(_backButton);
             Destroy(gameObject);
         }
 

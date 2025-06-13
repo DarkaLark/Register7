@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 public class DialogueManager : MonoBehaviour
 {
-    public static DialogueManager Instance {get; private set;}
+    public static DialogueManager Instance { get; private set; }
 
     [SerializeField] private DialogueUIReferences _ui;
 
@@ -51,12 +51,12 @@ public class DialogueManager : MonoBehaviour
 
     void OnEnable()
     {
-        _onAdvanceDialogue.Register(TryAdvancingDialogue);   
+        _onAdvanceDialogue.Register(TryAdvancingDialogue);
     }
 
     void OnDisable()
     {
-        _onAdvanceDialogue.Unregister(TryAdvancingDialogue);   
+        _onAdvanceDialogue.Unregister(TryAdvancingDialogue);
     }
 
     public void StartDialogue(DialogueNode startingNode, string overrideSpeaker = null)
@@ -72,29 +72,14 @@ public class DialogueManager : MonoBehaviour
     private void LoadNode(DialogueNode node)
     {
         ClearPreviousChoices();
+
+        _onDialogueChanged.Raise(DialogueState.Listening);
         _currentNode = node;
         _currentLineIndex = 0;
 
         _currentBlip = node.voiceBlip != null ? node.voiceBlip : _audio.DefaultBlip;
 
         StartTyping(_currentNode.lines[_currentLineIndex]);
-    }
-
-    private void Update()
-    {
-        if (_currentNode == null) return;
-
-        if (_isTyping)
-        {
-            if (Input.GetMouseButton(0))
-            {
-                _mouseHoldTime += Time.deltaTime;
-            }
-            else
-            {
-                _mouseHoldTime = 0f;
-            }
-        }
     }
 
     private void TryAdvancingDialogue()
@@ -106,22 +91,30 @@ public class DialogueManager : MonoBehaviour
     private void ShowChoices()
     {
         ClearPreviousChoices();
-        List <DialogueNode.DialogueChoice> currentNodeChoices = _currentNode.choices;
+        List<DialogueNode.DialogueChoice> currentNodeChoices = _currentNode.choices;
 
         if (currentNodeChoices != null && currentNodeChoices.Count > 0 && !AreAllChoicesFlagged(currentNodeChoices))
         {
             _onDialogueChanged.Raise(DialogueState.Responding);
 
             _ui.ChoicePanel.SetActive(true);
+            GameObject firstSelectable = null;
+
             foreach (var choice in currentNodeChoices)
             {
                 string requiredFlag = choice.dialogueFlags.RequiredFlag;
 
                 if (string.IsNullOrEmpty(requiredFlag) || GameFlags.HasFlag(requiredFlag))
                 {
-                    CreateChoiceButton(choice);
+                    GameObject choiceButton = CreateChoiceButton(choice);
+
+                    if (firstSelectable == null)
+                        firstSelectable = choiceButton;
                 }
             }
+
+            if (firstSelectable != null)
+                StartCoroutine(SetSelectionNextFrame(firstSelectable));
         }
         else
         {
@@ -137,7 +130,7 @@ public class DialogueManager : MonoBehaviour
 
             if (string.IsNullOrEmpty(requiredFlag) || GameFlags.HasFlag(requiredFlag))
             {
-              return false;
+                return false;
             }
         }
 
@@ -188,7 +181,7 @@ public class DialogueManager : MonoBehaviour
         return _ui.ChoicesContainer.childCount > 0;
     }
 
-    private void CreateChoiceButton(DialogueNode.DialogueChoice choice)
+    private GameObject CreateChoiceButton(DialogueNode.DialogueChoice choice)
     {
         GameObject btnObj = Instantiate(_ui.ChoiceButtonPrefab, _ui.ChoicesContainer);
         var btnText = btnObj.GetComponentInChildren<TextMeshProUGUI>();
@@ -198,6 +191,7 @@ public class DialogueManager : MonoBehaviour
         DialogueNode next = choice.nextNode;
 
         btn.onClick.AddListener(() => HandleChoice(next, choice));
+        return btnObj;
     }
 
     private void HandleChoice(DialogueNode next, DialogueNode.DialogueChoice current)
@@ -253,4 +247,9 @@ public class DialogueManager : MonoBehaviour
         _blipTimer = _blipCooldown;
     }
 
+    private IEnumerator SetSelectionNextFrame(GameObject target)
+    {
+        yield return null;
+        EventSystem.current.SetSelectedGameObject(target);
+    }
 }

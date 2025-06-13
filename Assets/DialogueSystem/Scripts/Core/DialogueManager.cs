@@ -13,6 +13,10 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] private DialogueAudioReferences _audio;
 
+    [Header("Camera")]
+    [Space(3)]
+    [SerializeField] private GameObject _camera;
+
     [Header("Typing Dialogue")]
     [Space(5)]
     [SerializeField] private float _typingSpeed = 0.02f;
@@ -76,6 +80,8 @@ public class DialogueManager : MonoBehaviour
         _onDialogueChanged.Raise(DialogueState.Listening);
         _currentNode = node;
         _currentLineIndex = 0;
+
+        _camera.SetActive(false);
 
         _currentBlip = node.voiceBlip != null ? node.voiceBlip : _audio.DefaultBlip;
 
@@ -173,6 +179,7 @@ public class DialogueManager : MonoBehaviour
         _ui.ChoicePanel.SetActive(false);
         _currentNode = null;
         _currentLineIndex = 0;
+        _camera.SetActive(true);
         _onDialogueChanged.Raise(DialogueState.None);
     }
 
@@ -190,6 +197,9 @@ public class DialogueManager : MonoBehaviour
         Button btn = btnObj.GetComponent<Button>();
         DialogueNode next = choice.nextNode;
 
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+
         btn.onClick.AddListener(() => HandleChoice(next, choice));
         return btnObj;
     }
@@ -201,6 +211,9 @@ public class DialogueManager : MonoBehaviour
         {
             GameFlags.SetFlag(setFlag);
         }
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         if (next == null)
         {

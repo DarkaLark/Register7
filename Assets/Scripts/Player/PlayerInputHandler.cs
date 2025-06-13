@@ -32,6 +32,9 @@ public class PlayerInputHandler : MonoBehaviour
     {
         _playerInput = GetComponent<PlayerInput>();
 
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         _playerInteract = _playerInput.actions["Interact"];
         _playerMove = _playerInput.actions["Move"];
         _playerAdvanceDialogue = _playerInput.actions["Advance Dialogue"];

@@ -68,8 +68,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 3608527104029772423, guid: 378b204f2f68b2e4d86865ba9a4c0527, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -97,7 +97,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -107,9 +107,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: -7029594906351859888, guid: 378b204f2f68b2e4d86865ba9a4c0527, type: 3}
+    m_PressedSprite: {fileID: -7998470062454251390, guid: 378b204f2f68b2e4d86865ba9a4c0527, type: 3}
+    m_SelectedSprite: {fileID: -7029594906351859888, guid: 378b204f2f68b2e4d86865ba9a4c0527, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -681,7 +681,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onDropHotdogPress: {fileID: 11400000, guid: 766499a50a1e7534eb2f10cccb84bb2f, type: 2}
-  _playerInput: {fileID: 0}
 --- !u!114 &8794985817540706855
 MonoBehaviour:
   m_ObjectHideFlags: 0

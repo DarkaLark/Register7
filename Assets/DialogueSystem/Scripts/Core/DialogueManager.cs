@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -66,8 +67,6 @@ public class DialogueManager : MonoBehaviour
             : overrideSpeaker;
 
         LoadNode(startingNode);
-
-        _onDialogueChanged.Raise(DialogueState.Listening);
     }
 
     private void LoadNode(DialogueNode node)
@@ -95,11 +94,6 @@ public class DialogueManager : MonoBehaviour
             {
                 _mouseHoldTime = 0f;
             }
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            TryAdvancingDialogue();
         }
     }
 

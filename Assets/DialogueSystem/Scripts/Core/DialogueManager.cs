@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] private DialogueAudioReferences _audio;
 
-    [Header("Camera")]
+    [Header("FreeLook Camera")]
     [Space(3)]
     [SerializeField] private GameObject _camera;
 

@@ -766,6 +766,7 @@ MonoBehaviour:
   _inputHandler: {fileID: 5916703149891232678}
   _onDialogueChanged: {fileID: 11400000, guid: f87a9f2288713bf42b1777efb2e95765, type: 2}
   _onGameStateChanged: {fileID: 11400000, guid: 4cb2b1ea340c5e344839b14c8abd1402, type: 2}
+  _onSprintDown: {fileID: 11400000, guid: a43c841eb6046e1488f15597a1233641, type: 2}
   _camera: {fileID: 1721524607910327048}
 --- !u!114 &5971619489969349747
 MonoBehaviour:
@@ -799,7 +800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _detector: {fileID: 5971619489969349747}
-  _onEKeyPress: {fileID: 11400000, guid: a8be889c21aa0dd4eab5dc8dd32b7b16, type: 2}
+  _onInteractPress: {fileID: 11400000, guid: a8be889c21aa0dd4eab5dc8dd32b7b16, type: 2}
 --- !u!114 &5916703149891232678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -812,8 +813,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec146043971a044ea768ffa5278b98c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onEKeyPress: {fileID: 11400000, guid: a8be889c21aa0dd4eab5dc8dd32b7b16, type: 2}
+  _onInteractPress: {fileID: 11400000, guid: a8be889c21aa0dd4eab5dc8dd32b7b16, type: 2}
+  _onAdvanceDialoguePress: {fileID: 11400000, guid: 00cfe857662703f4994a1331102badee, type: 2}
   _onMoveInput: {fileID: 11400000, guid: 31debce583e4aee4f9eb8306b541ba79, type: 2}
+  _onSprintDown: {fileID: 11400000, guid: a43c841eb6046e1488f15597a1233641, type: 2}
+  _onDialogueStateChanged: {fileID: 11400000, guid: f87a9f2288713bf42b1777efb2e95765, type: 2}
 --- !u!114 &8358066372805104376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -843,7 +847,7 @@ MonoBehaviour:
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1721524607910327048}
 --- !u!1 &4189682123853394921
 GameObject:
   m_ObjectHideFlags: 0

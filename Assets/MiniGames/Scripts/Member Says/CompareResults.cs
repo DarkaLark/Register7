@@ -7,10 +7,7 @@ public class CompareResults : MonoBehaviour
 
     [SerializeField] private GameEvent _onGenerateDemands;
 
-    [SerializeField] private PossibleItemsGameEvent _onHotdogPress;
-    [SerializeField] private PossibleItemsGameEvent _onPizzaPress;
-    [SerializeField] private PossibleItemsGameEvent _onIceCreamPress;
-    [SerializeField] private PossibleItemsGameEvent _onDrinkPress;
+    [SerializeField] private PossibleItemsGameEvent _onPlayerResponse;
 
     private int _itemNumber = 0;
     private List<PossibleItems> _expectedItems = new();
@@ -19,20 +16,14 @@ public class CompareResults : MonoBehaviour
     {
         _sendItemInformation.Register(ListExpectedItems);
 
-        _onHotdogPress.Register(ReadItem);
-        _onPizzaPress.Register(ReadItem);
-        _onIceCreamPress.Register(ReadItem);
-        _onDrinkPress.Register(ReadItem);
+        _onPlayerResponse.Register(ReadItem);
     }
 
     void OnDisable()
     {
         _sendItemInformation.Unregister(ListExpectedItems);
 
-        _onHotdogPress.Unregister(ReadItem);
-        _onPizzaPress.Unregister(ReadItem);
-        _onIceCreamPress.Unregister(ReadItem);
-        _onDrinkPress.Unregister(ReadItem);
+        _onPlayerResponse.Unregister(ReadItem);
     }
 
     private void ListExpectedItems(List<ItemInformation> items)

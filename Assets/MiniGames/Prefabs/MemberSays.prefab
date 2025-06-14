@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 1, g: 0.8844221, b: 0.7035176, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -388,6 +388,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4551421122899206704}
+  - component: {fileID: 5160070454978289497}
   m_Layer: 0
   m_Name: Buttons
   m_TagString: Untagged
@@ -418,6 +419,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5160070454978289497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2573010561232414065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e864b8f4a244f47ae7b9e6f006b14c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onPlayerResponse: {fileID: 11400000, guid: 8908df12037c5314f95aef0fc4ae20fc, type: 2}
+  _buttons:
+  - {fileID: 6230545554585156023}
+  - {fileID: 1009355962011299145}
+  - {fileID: 5087758527208229098}
+  - {fileID: 5841154338699035002}
 --- !u!1 &3919050075194717891
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,10 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c85ec5441d4aa45a636c8c1cebaa2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onHotdogPress: {fileID: 11400000, guid: be22fcc73f2a6c0408c32ba7759ae8cd, type: 2}
-  _onPizzaPress: {fileID: 11400000, guid: 7bb56502ce717a74f888af0bd85dd60c, type: 2}
-  _onIceCreamPress: {fileID: 11400000, guid: b2a5191cd8a5de045aa59e30b7384b88, type: 2}
-  _onDrinkPress: {fileID: 11400000, guid: 723356a138e4b0848b2da4c46e70663c, type: 2}
+  _onPlayerResponse: {fileID: 11400000, guid: 8908df12037c5314f95aef0fc4ae20fc, type: 2}
 --- !u!1 &4675243887581577567
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,10 +800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sendItemInformation: {fileID: 11400000, guid: 3d324660847cf1642a88547aa155a0b8, type: 2}
   _onGenerateDemands: {fileID: 11400000, guid: 149f6c5ade805d5488aee0035e26f66f, type: 2}
-  _onHotdogPress: {fileID: 11400000, guid: be22fcc73f2a6c0408c32ba7759ae8cd, type: 2}
-  _onPizzaPress: {fileID: 11400000, guid: 7bb56502ce717a74f888af0bd85dd60c, type: 2}
-  _onIceCreamPress: {fileID: 11400000, guid: b2a5191cd8a5de045aa59e30b7384b88, type: 2}
-  _onDrinkPress: {fileID: 11400000, guid: 723356a138e4b0848b2da4c46e70663c, type: 2}
+  _onPlayerResponse: {fileID: 11400000, guid: 8908df12037c5314f95aef0fc4ae20fc, type: 2}
 --- !u!1 &5788943466363265612
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,7 +978,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 1, g: 0.6984925, b: 0.6984925, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -999,7 +1012,7 @@ GameObject:
   - component: {fileID: 4263716034869101925}
   - component: {fileID: 5087758527208229098}
   m_Layer: 0
-  m_Name: Ice Cream
+  m_Name: IceCream
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1086,7 +1099,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.6984925, g: 0.7688443, b: 1, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1627,7 +1640,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.6984925, g: 1, b: 0.7035176, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1

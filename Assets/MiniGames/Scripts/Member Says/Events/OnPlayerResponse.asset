@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3062667303002248839fa6642c32739, type: 3}
-  m_Name: OnDrinkPress
+  m_Script: {fileID: 11500000, guid: 82f7aa9485b72e74d8b27aca6e004fa3, type: 3}
+  m_Name: OnPlayerResponse
   m_EditorClassIdentifier: 

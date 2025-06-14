@@ -5,11 +5,14 @@ public class CompareResults : MonoBehaviour
 {
     [SerializeField] private ItemInformationGameEvent _sendItemInformation;
 
-    [SerializeField] private GameEvent _onGenerateDemands;
+    [Space(5)]
+    [SerializeField] private GameEvent _onPlayerWin;
+    [SerializeField] private GameEvent _onPlayerLoss;
 
+    [Space(5)]
     [SerializeField] private PossibleItemsGameEvent _onPlayerResponse;
 
-    private int _itemNumber = 0;
+    private int _currentItemIndex = 0;
     private List<PossibleItems> _expectedItems = new();
 
     void OnEnable()
@@ -28,41 +31,42 @@ public class CompareResults : MonoBehaviour
 
     private void ListExpectedItems(List<ItemInformation> items)
     {
+        _expectedItems.Clear();
         foreach (ItemInformation item in items)
         {
             _expectedItems.Add(item.itemID);
         }
+
+        Debug.Log("Expected sequence: " + string.Join(", ", _expectedItems));
     }
 
     private void ReadItem(PossibleItems item)
     {
+        Debug.Log(item + " being pressed");
         if (TurnStateManager.Instance.CurrentState == TurnState.Member) return;
 
-        if (item >= _expectedItems[_itemNumber])
+        if (item == _expectedItems[_currentItemIndex])
         {
             Debug.Log("Correct");
-            _itemNumber++;
-            Debug.Log(_itemNumber + " out of " + _expectedItems.Count);
+            _currentItemIndex++;
+            Debug.Log(_currentItemIndex + " out of " + _expectedItems.Count);
 
-            if (_itemNumber >= _expectedItems.Count)
+            if (_currentItemIndex >= _expectedItems.Count)
             {
-                ResetGame();
-                Debug.Log("Should Restart");
+                _onPlayerWin.Raise();
+                ResetSequence();
             }
         }
         else
         {
-            Debug.Log("Nah");
-            _itemNumber++;
-
-            ResetGame();
+            _onPlayerLoss.Raise();
+            ResetSequence();
         }
     }
 
-    private void ResetGame()
+    private void ResetSequence()
     {
-        _onGenerateDemands.Raise();
-        _itemNumber = 0;
+        _currentItemIndex = 0;
         _expectedItems.Clear();
     }
 }

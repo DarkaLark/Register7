@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Ice Cream
   m_EditorClassIdentifier: 
   itemID: 2
+  color: {r: 0.5, g: 0.6196079, b: 1, a: 1}
   itemSound: {fileID: 8300000, guid: 49c0bb584aa4b80409b2e98e7a45f061, type: 3}
   itemImage: {fileID: 0}

@@ -14,7 +14,7 @@ public class ExitMiniGame : MonoBehaviour
         }
     }
 
-    public void Exit()
+    private void Exit()
     {
         EventSystem.current.SetSelectedGameObject(_miniGame);
         _onGameStateChanged.Raise(GameState.Playing);

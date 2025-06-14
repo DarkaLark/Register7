@@ -3,10 +3,8 @@ using UnityEngine.InputSystem;
 
 public class InputContextSwitcher : MonoBehaviour
 {
-    [SerializeField] private InputActionAsset _inputAsset;
-
     [SerializeField] private GameStateGameEvent _onGameStateChanged;
-
+    [SerializeField] private ListOfMiniGames.MiniGame miniGame;
     private PlayerInput _playerInput;
 
     void Awake()
@@ -30,7 +28,7 @@ public class InputContextSwitcher : MonoBehaviour
 
     private void SwitchToMiniGameInput()
     {
-        _playerInput.SwitchCurrentActionMap("Mini Game");
+        _playerInput.SwitchCurrentActionMap(miniGame.ToString());
     }
 
     private void SwitchToPlayerInput()

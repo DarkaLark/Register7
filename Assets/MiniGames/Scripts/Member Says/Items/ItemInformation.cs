@@ -4,6 +4,7 @@ using UnityEngine;
 public class ItemInformation : ScriptableObject
 {
     public PossibleItems itemID;
+    public Color color;
     public AudioClip itemSound;
     public Sprite itemImage;
 }

@@ -6,18 +6,6 @@ public class TurnStateManager : MonoBehaviour
     private TurnState _currentState;
     public TurnState CurrentState => _currentState;
 
-    [SerializeField] private TurnStateGameEvent _onTurnStateChanged;
-
-    void OnEnable()
-    {
-        _onTurnStateChanged.Register(SetState);
-    }
-
-    void OnDisable()
-    {
-        _onTurnStateChanged.Unregister(SetState);
-    }
-
     void Awake()
     {
         if (Instance == null)
@@ -29,10 +17,5 @@ public class TurnStateManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    private void SetState(TurnState newState)
-    {
-        _currentState = newState;
     }
 }

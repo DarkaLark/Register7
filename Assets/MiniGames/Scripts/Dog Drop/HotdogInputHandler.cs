@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MiniGameInputHandler : MonoBehaviour
+public class HotdogInputHandler : MonoBehaviour
 {
     [SerializeField] private GameEvent _onDropHotdogPress;
 

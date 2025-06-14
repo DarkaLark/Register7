@@ -804,6 +804,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 733894935825813129, guid: 54986aeccc4d67140b7b0c0540ad4ef6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3454678293725043677, guid: 54986aeccc4d67140b7b0c0540ad4ef6, type: 3}
       propertyPath: _audioSource
       value: 
@@ -816,6 +820,10 @@ PrefabInstance:
       propertyPath: _audioSource
       value: 
       objectReference: {fileID: 788232630}
+    - target: {fileID: 4461498156204622723, guid: 54986aeccc4d67140b7b0c0540ad4ef6, type: 3}
+      propertyPath: _onGenerateDemands
+      value: 
+      objectReference: {fileID: 11400000, guid: 149f6c5ade805d5488aee0035e26f66f, type: 2}
     - target: {fileID: 5020858888351635837, guid: 54986aeccc4d67140b7b0c0540ad4ef6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -824,7 +832,8 @@ PrefabInstance:
       propertyPath: m_DefaultActionMap
       value: MemberSays
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 733894935825813129, guid: 54986aeccc4d67140b7b0c0540ad4ef6, type: 3}
     m_RemovedGameObjects:
     - {fileID: 7942583979823818815, guid: 54986aeccc4d67140b7b0c0540ad4ef6, type: 3}
     - {fileID: 677164303071023517, guid: 54986aeccc4d67140b7b0c0540ad4ef6, type: 3}

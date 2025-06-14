@@ -3,10 +3,10 @@ using UnityEngine.InputSystem;
 
 public class MemberSaysInputHandler : MonoBehaviour
 {
-    [SerializeField] private GameEvent _onHotdogPress;
-    [SerializeField] private GameEvent _onPizzaPress;
-    [SerializeField] private GameEvent _onIceCreamPress;
-    [SerializeField] private GameEvent _onDrinkPress;
+    [SerializeField] private PossibleItemsGameEvent _onHotdogPress;
+    [SerializeField] private PossibleItemsGameEvent _onPizzaPress;
+    [SerializeField] private PossibleItemsGameEvent _onIceCreamPress;
+    [SerializeField] private PossibleItemsGameEvent _onDrinkPress;
 
     private PlayerInput _playerInput;
     
@@ -42,21 +42,21 @@ public class MemberSaysInputHandler : MonoBehaviour
 
     void OnHotdog(InputAction.CallbackContext context)
     {
-        _onHotdogPress.Raise();
+        _onHotdogPress.Raise(PossibleItems.Hotdog);
     }
 
     void OnPizza(InputAction.CallbackContext context)
     {
-        _onPizzaPress.Raise();
+        _onPizzaPress.Raise(PossibleItems.Pizza);
     }
 
     void OnIceCream(InputAction.CallbackContext context)
     {
-        _onIceCreamPress.Raise();
+        _onIceCreamPress.Raise(PossibleItems.IceCream);
     }
 
     void OnDrink(InputAction.CallbackContext context)
     {
-        _onDrinkPress.Raise();
+        _onDrinkPress.Raise(PossibleItems.Drink);
     }
 }

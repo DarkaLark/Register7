@@ -12,8 +12,8 @@ public class MemberDemands : MonoBehaviour
     [SerializeField] private List<ItemInformation> _allItems;
     private List<ItemInformation> _itemsWanted = new();
 
-    private int _numberOfItems = 2;
-    private int _maxItems = 5;
+    private int _numberOfItems = 3;
+    private int _maxItems = 6;
 
     private float _delayBetweenItems = 1f;
     private float _blankSpaceTime = 0.2f;
@@ -23,25 +23,32 @@ public class MemberDemands : MonoBehaviour
     [SerializeField] private TurnStateGameEvent _onTurnStateChanged;
     [SerializeField] private ItemInformationGameEvent _sendItemInformation;
     [SerializeField] private GameStateGameEvent _onGameStateChanged;
+    
+    [SerializeField] private GameEvent _onGenerateDemands;
+
+    void OnEnable()
+    {
+        _onGenerateDemands.Register(GenerateDemands);
+    }
+
+    void OnDisable()
+    {
+        _onGenerateDemands.Unregister(GenerateDemands);
+    }
 
     void Start()
     {
-        _numberOfItems = Mathf.Min(_numberOfItems + 1, _maxItems);
-
         _onGameStateChanged.Raise(GameState.MiniGame);
 
         StartCoroutine(DelayStart());
     }
 
-    public void GenerateDemands()
+    private void GenerateDemands()
     {
         _itemsWanted.Clear();
+        TurnStateManager.Instance.SetState(TurnState.Member);
 
-        if (_allItems == null || _allItems.Count == 0)
-        {
-            Debug.LogError("No items available in _allItems! Cannot generate demands.");
-            return;
-        }
+        if (_allItems == null || _allItems.Count == 0) return;
 
         for (int i = 0; i < _numberOfItems; i++)
         {
@@ -51,10 +58,9 @@ public class MemberDemands : MonoBehaviour
 
         StartCoroutine(PresentItems());
 
-        _numberOfItems++;
+            _numberOfItems = Mathf.Min(_numberOfItems + 1, _maxItems);
 
         _onTurnStateChanged.Raise(TurnState.Player);
-        _sendItemInformation.Raise(_itemsWanted);
     }
 
     private IEnumerator PresentItems()
@@ -75,6 +81,9 @@ public class MemberDemands : MonoBehaviour
             yield return new WaitForSeconds(_delayBetweenItems);
             currentItemNumber++;
         }
+
+        _sendItemInformation.Raise(_itemsWanted);
+        TurnStateManager.Instance.SetState(TurnState.Player);
     }
 
     private IEnumerator DelayStart()

@@ -18,4 +18,9 @@ public class TurnStateManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void SetState(TurnState newState)
+    {
+        _currentState = newState;
+    }
 }

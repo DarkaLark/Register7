@@ -24,7 +24,6 @@ public class MemberSaysInputHandler : MonoBehaviour
         _iceCream = _playerInput.actions["Ice Cream"];
         _drink = _playerInput.actions["Drink"];
     }
-
     void OnEnable()
     {
         _hotdog.performed += OnHotdog;

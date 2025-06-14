@@ -28,6 +28,8 @@ public class MemberDemands : MonoBehaviour
     {
         _numberOfItems = Mathf.Min(_numberOfItems + 1, _maxItems);
 
+        _onGameStateChanged.Raise(GameState.MiniGame);
+
         StartCoroutine(DelayStart());
     }
 

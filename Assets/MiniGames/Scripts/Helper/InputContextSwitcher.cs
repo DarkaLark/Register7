@@ -10,6 +10,7 @@ public class InputContextSwitcher : MonoBehaviour
     void Awake()
     {
         _playerInput = FindFirstObjectByType<PlayerInput>();
+        
         _onGameStateChanged.Register(Switch);
     }
 

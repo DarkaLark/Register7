@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,12 +10,21 @@ public class LossFeedback : MonoBehaviour
 
     [SerializeField] private ItemInformationGameEvent _sendItemInformation;
     private string _itemsWanted;
+
+    [SerializeField] private GameObject _backButton;
+
+    private AudioSource _audioSource;
     
     [SerializeField] private GameEvent _onGenerateDemands;
 
     [Space(5)]
     [SerializeField] TextMeshProUGUI _memberText;
     [SerializeField] AudioClip _wrongBeep;
+
+    void Awake()
+    {
+        _audioSource = FindFirstObjectByType<AudioSource>();
+    }
 
     void OnEnable()
     {
@@ -48,9 +58,10 @@ public class LossFeedback : MonoBehaviour
         _memberText.color = Color.black;
         _memberText.text = "I wanted " + _itemsWanted +"!!";
 
-        AudioSource.PlayClipAtPoint(_wrongBeep, Camera.main.transform.position);
-
+        _audioSource.PlayOneShot(_wrongBeep);
         yield return new WaitForSeconds(2);
-        _onGenerateDemands.Raise();
+        
+            _backButton.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(_backButton);
     }
 }

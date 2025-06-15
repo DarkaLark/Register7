@@ -7,7 +7,7 @@ public class MemberDemands : MonoBehaviour
 {
     [SerializeField] private TMP_Text _text;
 
-    [SerializeField] private AudioSource _audioSource;
+    private AudioSource _audioSource;
 
     [SerializeField] private List<ItemInformation> _allItems;
     private List<ItemInformation> _itemsWanted = new();
@@ -15,7 +15,7 @@ public class MemberDemands : MonoBehaviour
     private int _numberOfItems = 3;
     private int _maxItems = 6;
 
-    private float _delayBetweenItems = 1f;
+    private float _delayBetweenItems = 0.8f;
     private float _blankSpaceTime = 0.2f;
 
     private float _startDelayTimer = 1f;
@@ -25,6 +25,11 @@ public class MemberDemands : MonoBehaviour
     [SerializeField] private GameStateGameEvent _onGameStateChanged;
     
     [SerializeField] private GameEvent _onGenerateDemands;
+
+    void Awake()
+    {
+        _audioSource = FindFirstObjectByType<AudioSource>();
+    }
 
     void OnEnable()
     {
@@ -79,6 +84,7 @@ public class MemberDemands : MonoBehaviour
             _text.color = currentItem.color;
 
             yield return new WaitForSeconds(_delayBetweenItems);
+            _text.text = string.Empty;
             currentItemNumber++;
         }
 

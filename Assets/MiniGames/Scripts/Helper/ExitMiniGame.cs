@@ -8,7 +8,8 @@ public class ExitMiniGame : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return)
+        || Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.LeftShift))
         {
             Exit();
         }

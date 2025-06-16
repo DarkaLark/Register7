@@ -10,6 +10,7 @@ public class BubblePosition : MonoBehaviour
     {
         Vector3 spawnPosition = RandomPointOnXZPlane();
         Instantiate(_bubblePrefab, spawnPosition, Quaternion.identity);
+        Debug.Log("Spawning");
     }
 
     private Vector2 RandomPointOnPizza()

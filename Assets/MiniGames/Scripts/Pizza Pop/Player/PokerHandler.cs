@@ -14,18 +14,6 @@ public class PokerHandler : MonoBehaviour
     [SerializeField] private float _cursorSpeed = 1000f;
     private Vector2 _cursorPosition;
 
-    void Update()
-    {
-        if (Gamepad.current != null && Gamepad.current.wasUpdatedThisFrame)
-        {
-            Debug.Log("Player is using Gamepad");
-        }
-        else if (Mouse.current != null && (Mouse.current.delta.ReadValue() != Vector2.zero || Mouse.current.leftButton.wasPressedThisFrame))
-        {
-            Debug.Log("Player is using Keyboard and Mouse");
-        }
-    }
-
     void OnEnable()
     {
         _onMousePointerPosition.Register(OnMousePointerMove);
@@ -72,6 +60,11 @@ public class PokerHandler : MonoBehaviour
 
     private void OnPointerClick()
     {
-        Debug.Log($"Clicker was pressed at : {_cursorPosition}");
+        Ray ray = Camera.main.ScreenPointToRay(_cursorPosition);
+
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            Debug.Log($"Hit 3D object: {hit.collider.gameObject.name}");
+        }
     }
 }

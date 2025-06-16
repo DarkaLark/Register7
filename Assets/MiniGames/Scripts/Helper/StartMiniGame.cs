@@ -9,6 +9,5 @@ public class StartMiniGame : MonoBehaviour, IInteractable
     {
         Instantiate(_miniGame);
         _onGameStateChanged.Raise(GameState.MiniGame);
-        Debug.Log(_miniGame.name);
     }
 }

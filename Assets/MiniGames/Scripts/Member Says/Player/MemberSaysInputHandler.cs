@@ -15,6 +15,9 @@ public class MemberSaysInputHandler : MonoBehaviour
     void Awake()
     {
         _playerInput = FindFirstObjectByType<PlayerInput>();
+        
+        _playerInput.SwitchCurrentActionMap("MemberSays");
+        
 
         _hotdog = _playerInput.actions["Hotdog"];
         _pizza = _playerInput.actions["Pizza"];

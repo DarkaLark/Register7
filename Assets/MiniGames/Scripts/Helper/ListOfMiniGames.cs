@@ -5,6 +5,7 @@ public class ListOfMiniGames : ScriptableObject
     public enum MiniGame
     {
         DogDrop,
-        MemberSays        
+        MemberSays,
+        PizzaPop
     }
 }

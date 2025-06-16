@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onGameStateChanged: {fileID: 11400000, guid: 4cb2b1ea340c5e344839b14c8abd1402, type: 2}
-  miniGame: 1
+  _miniGame: 1
 --- !u!1 &1491969925831868795
 GameObject:
   m_ObjectHideFlags: 0

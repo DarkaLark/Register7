@@ -11,7 +11,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     [SerializeField] private GameEvent _onInteractPress;
     [SerializeField] private GameEvent _onAdvanceDialoguePress;
-    [SerializeField] private PlayerMovementGameEvent _onMoveInput;
+    [SerializeField] private Vector2GameEvent _onMoveInput;
     [SerializeField] private BoolGameEvent _onSprintDown;
 
     [SerializeField] private DialogueStateGameEvent _onDialogueStateChanged;

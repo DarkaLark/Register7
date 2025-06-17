@@ -14,6 +14,8 @@ public class PokerHandler : MonoBehaviour
     [SerializeField] private float _cursorSpeed = 1000f;
     private Vector2 _cursorPosition;
 
+    [SerializeField] private GameObject _bubblePrefab;
+
     void OnEnable()
     {
         _onMousePointerPosition.Register(OnMousePointerMove);
@@ -62,9 +64,11 @@ public class PokerHandler : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(_cursorPosition);
 
-        if (Physics.Raycast(ray, out RaycastHit hit))
+        if (Physics.Raycast(ray, out RaycastHit hit) == _bubblePrefab)
         {
-            Debug.Log($"Hit 3D object: {hit.collider.gameObject.name}");
+            Debug.Log("Hit bubble prefab");
+
+            Destroy(_bubblePrefab.gameObject);
         }
     }
 }

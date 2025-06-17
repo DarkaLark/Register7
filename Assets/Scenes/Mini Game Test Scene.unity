@@ -1036,6 +1036,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5685319923056073913, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
+      propertyPath: _bubblePrefab
+      value: 
+      objectReference: {fileID: 9127476687491463548, guid: a03026973c6c9fd47b92f42bdd28e707, type: 3}
     - target: {fileID: 8461405724033603194, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

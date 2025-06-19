@@ -181,6 +181,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &234648071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 234648073}
+  - component: {fileID: 234648072}
+  m_Layer: 0
+  m_Name: Bubble Spawner (Temp)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &234648072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234648071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b84538ffeb2a65541b316da5452179f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bubblePrefab: {fileID: 9127476687491463548, guid: a03026973c6c9fd47b92f42bdd28e707, type: 3}
+  _spawnCenter: {fileID: 715910173}
+  _radius: 1
+--- !u!4 &234648073
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234648071}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.088854216, y: -0.61990184, z: -0.1545771}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &469921403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,6 +284,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Asset: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_ActionId: 15cef263-9014-4fd5-94d9-4e4a6234a6ef
+--- !u!4 &715910173 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6762706164720665258, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
+  m_PrefabInstance: {fileID: 7717542848133380434}
+  m_PrefabAsset: {fileID: 0}
 --- !u!20 &788232627 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 4349907537988435620, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
@@ -662,7 +714,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1840639908}
+      - m_Target: {fileID: 234648072}
         m_TargetAssemblyTypeName: BubblePosition, Assembly-CSharp
         m_MethodName: SpawnBubble
         m_Mode: 1
@@ -938,17 +990,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836067562}
   m_CullTransparentMesh: 1
---- !u!114 &1840639908 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5767134842953214478, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
-  m_PrefabInstance: {fileID: 7717542848133380434}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b84538ffeb2a65541b316da5452179f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2025808524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,10 +1077,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5685319923056073913, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
-      propertyPath: _bubblePrefab
-      value: 
-      objectReference: {fileID: 9127476687491463548, guid: a03026973c6c9fd47b92f42bdd28e707, type: 3}
     - target: {fileID: 8461405724033603194, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1099,3 +1136,4 @@ SceneRoots:
   - {fileID: 7717542848133380434}
   - {fileID: 1363059483}
   - {fileID: 1128196479}
+  - {fileID: 234648073}

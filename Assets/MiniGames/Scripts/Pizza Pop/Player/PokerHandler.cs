@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PokerHandler : MonoBehaviour
 {
@@ -14,7 +13,15 @@ public class PokerHandler : MonoBehaviour
     [SerializeField] private float _cursorSpeed = 1000f;
     private Vector2 _cursorPosition;
 
-    [SerializeField] private GameObject _bubblePrefab;
+    [Header("Splat Sound")]
+    [Space(5)]
+    private AudioSource _audio;
+    [SerializeField] private AudioClip _splat;
+
+    void Awake()
+    {
+        _audio = FindFirstObjectByType<AudioSource>();   
+    }
 
     void OnEnable()
     {
@@ -63,12 +70,25 @@ public class PokerHandler : MonoBehaviour
     private void OnPointerClick()
     {
         Ray ray = Camera.main.ScreenPointToRay(_cursorPosition);
+        RaycastHit hit;
 
-        if (Physics.Raycast(ray, out RaycastHit hit) == _bubblePrefab)
+        if (Physics.Raycast(ray, out hit)
+            && hit.collider.TryGetComponent(out Bubble bubble))
         {
-            Debug.Log("Hit bubble prefab");
+            bubble.Pop();
+        }
+        else if (Physics.Raycast(ray, out hit)
+            && hit.collider.gameObject.name == "Pizza")
+        {
+            Debug.Log("Attempting to play audio");
 
-            Destroy(_bubblePrefab.gameObject);
+            if (_audio != null)
+            {
+                Debug.Log("Playing Audio");
+
+                _audio.pitch = Random.Range(.95f, 1.05f);
+                _audio.PlayOneShot(_splat);
+            }
         }
     }
 }

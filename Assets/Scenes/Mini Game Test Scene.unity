@@ -438,6 +438,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!224 &1188409967 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2964903457795485613, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
+  m_PrefabInstance: {fileID: 7717542848133380434}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1363059481
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,6 +859,81 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Asset: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_ActionId: 7607c7b6-cd76-4816-beef-bd0341cfe950
+--- !u!1 &1831021724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1831021725}
+  - component: {fileID: 1831021727}
+  - component: {fileID: 1831021726}
+  m_Layer: 5
+  m_Name: Poker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1831021725
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831021724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1188409967}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 150, y: 800}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1831021726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831021724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 2073857171028810526, guid: 938990e5b222d3d40a2f802614fbd8a6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1831021727
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831021724}
+  m_CullTransparentMesh: 1
 --- !u!1 &1836067562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,6 +1157,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5685319923056073913, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
+      propertyPath: _cursorVisual
+      value: 
+      objectReference: {fileID: 1831021725}
+    - target: {fileID: 5685319923056073913, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
+      propertyPath: _cursorOffset.x
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5685319923056073913, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
+      propertyPath: _cursorOffset.y
+      value: -360
+      objectReference: {fileID: 0}
+    - target: {fileID: 5685319923056073913, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
+      propertyPath: _onPointerClick
+      value: 
+      objectReference: {fileID: 11400000, guid: 513a7eeaf024eae48a065e5ec627fbd4, type: 2}
+    - target: {fileID: 6968748162259589451, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
+      propertyPath: _onPointerClick
+      value: 
+      objectReference: {fileID: 11400000, guid: 513a7eeaf024eae48a065e5ec627fbd4, type: 2}
+    - target: {fileID: 6968748162259589451, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
+      propertyPath: _onMousePointerClick
+      value: 
+      objectReference: {fileID: 11400000, guid: 8296d34df53361a419e3a0834b83e7e6, type: 2}
+    - target: {fileID: 6968748162259589451, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
+      propertyPath: _onGamepadPointerClick
+      value: 
+      objectReference: {fileID: 11400000, guid: bc2ad5f2461d4a040b44cbcc4cb41452, type: 2}
     - target: {fileID: 8461405724033603194, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1122,8 +1230,12 @@ PrefabInstance:
       value: Pizza Pop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 9185482346333274745, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2964903457795485613, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1831021725}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
 --- !u!1660057539 &9223372036854775807

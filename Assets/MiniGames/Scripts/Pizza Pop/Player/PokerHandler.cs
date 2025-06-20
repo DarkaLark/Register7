@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PokerHandler : MonoBehaviour
@@ -10,7 +11,10 @@ public class PokerHandler : MonoBehaviour
     [Header("Cursor")]
     [Space(5)]
     [SerializeField] private RectTransform _cursorVisual;
+    private Vector3 _cursorClickAnimation = new(-10, 0, 0);
+    private Vector3 _cursorAnimationOffset = Vector3.zero;
     [SerializeField] private float _cursorSpeed = 1000f;
+    private Vector2 _cursorOffset = new(75, -360);
     private Vector2 _cursorPosition;
 
     [Header("Splat Sound")]
@@ -18,9 +22,13 @@ public class PokerHandler : MonoBehaviour
     private AudioSource _audio;
     [SerializeField] private AudioClip _splat;
 
+    [Header("Player Input Device")]
+    private bool _isMouse = false;
+    private bool _isGamepad = false;
+
     void Awake()
     {
-        _audio = FindFirstObjectByType<AudioSource>();   
+        _audio = FindFirstObjectByType<AudioSource>();
     }
 
     void OnEnable()
@@ -35,12 +43,15 @@ public class PokerHandler : MonoBehaviour
     {
         _onMousePointerPosition.Unregister(OnMousePointerMove);
         _onGamepadPointerPosition.Unregister(OnGamepadPointerMove);
+
         _onPointerClick.Unregister(OnPointerClick);
     }
 
     private void OnMousePointerMove(Vector2 input)
     {
         _cursorPosition = input;
+        _isMouse = true;
+        _isGamepad = false;
 
         VisualizeCursor();
     }
@@ -48,6 +59,8 @@ public class PokerHandler : MonoBehaviour
     private void OnGamepadPointerMove(Vector2 input)
     {
         _cursorPosition += _cursorSpeed * Time.deltaTime * input;
+        _isMouse = false;
+        _isGamepad = true;
 
         VisualizeCursor();
     }
@@ -57,7 +70,9 @@ public class PokerHandler : MonoBehaviour
         _cursorPosition = ClampToScreen(_cursorPosition);
 
         if (_cursorVisual != null)
-            _cursorVisual.position = _cursorPosition;
+        {
+            _cursorVisual.position = _cursorPosition + _cursorOffset + (Vector2)_cursorAnimationOffset;
+        }
     }
 
     private Vector2 ClampToScreen(Vector2 pos)
@@ -80,15 +95,38 @@ public class PokerHandler : MonoBehaviour
         else if (Physics.Raycast(ray, out hit)
             && hit.collider.gameObject.name == "Pizza")
         {
-            Debug.Log("Attempting to play audio");
-
             if (_audio != null)
-            {
-                Debug.Log("Playing Audio");
-
-                _audio.pitch = Random.Range(.95f, 1.05f);
-                _audio.PlayOneShot(_splat);
-            }
+                PlayAudio();
         }
+
+        if (_isMouse == true)
+            StartCoroutine(MousePopAnimation());
+        else
+            StartCoroutine(GamepadPopAnimation());
     }
+
+    #region OnPointerClick func's
+    private void PlayAudio()
+    {
+        _audio.pitch = Random.Range(.95f, 1.05f);
+        _audio.PlayOneShot(_splat);
+    }
+
+    private IEnumerator MousePopAnimation()
+    {
+        _cursorVisual.position += _cursorClickAnimation;
+
+        yield return new WaitForSeconds(0.1f);
+        _cursorVisual.position -= _cursorClickAnimation;
+
+    }
+    private IEnumerator GamepadPopAnimation()
+    {
+        _cursorAnimationOffset = _cursorClickAnimation;
+
+        yield return new WaitForSeconds(0.1f);
+
+        _cursorAnimationOffset = Vector3.zero;
+    }
+    #endregion
 }

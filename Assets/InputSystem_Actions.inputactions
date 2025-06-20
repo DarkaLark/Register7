@@ -1215,11 +1215,11 @@
                 },
                 {
                     "name": "",
-                    "id": "03458ebf-c618-4cc8-86d1-994e4be88862",
+                    "id": "f54c9988-c847-4675-97e6-8d2a5b259c3f",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Gamepad",
+                    "groups": "",
                     "action": "PointerClick",
                     "isComposite": false,
                     "isPartOfComposite": false

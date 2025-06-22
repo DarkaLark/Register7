@@ -98,7 +98,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638860258388070900
+  platformSettingsDirtyTick: 638861500145934680
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -132,7 +132,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 63
+      y: 109
       width: 36
       height: 53
     spriteID: 5b0b7e193a6ceed449280e3a7361df56
@@ -143,7 +143,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 63}
+    uvTransform: {x: 4, y: 109}
   - name: 2
     originalName: 
     pivot: {x: 0.49999997, y: -0.18604651}
@@ -173,8 +173,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 48
-      y: 63
+      x: 4
+      y: 170
       width: 27
       height: 47
     spriteID: 69942c32771b4154c9609433e84e0679
@@ -185,7 +185,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 48, y: 63}
+    uvTransform: {x: 4, y: 170}
   - name: Background
     originalName: 
     pivot: {x: 0.5, y: -0.058823533}
@@ -207,9 +207,30 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: GO
+    originalName: 
+    pivot: {x: 0.5, y: -0.28947368}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 63
+      width: 62
+      height: 38
+    spriteID: e3265deef582fb1458ee4502b9525683
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 63}
   spriteSheetImportData: []
   asepriteLayers:
-  - layerIndex: 0
+  - layerIndex: 2
     uuid:
       value0: 372029327
       value1: 0
@@ -232,7 +253,7 @@ ScriptedImporter:
       spriteId: 5b0b7e193a6ceed449280e3a7361df56
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 1
+  - layerIndex: 3
     uuid:
       value0: 372029328
       value1: 0
@@ -255,7 +276,7 @@ ScriptedImporter:
       spriteId: 24c76e17c03a860489df8b2603b4ef1a
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 2
+  - layerIndex: 4
     uuid:
       value0: 372029325
       value1: 0
@@ -278,7 +299,7 @@ ScriptedImporter:
       spriteId: 69942c32771b4154c9609433e84e0679
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 3
+  - layerIndex: 0
     uuid:
       value0: 332801758
       value1: 0
@@ -299,6 +320,29 @@ ScriptedImporter:
         width: 70
         height: 51
       spriteId: f5feed96dc866b24293a262ccc1bb486
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 1
+    uuid:
+      value0: 71993652
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: GO
+    layerFlags: 2
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: GO
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 11
+        width: 62
+        height: 38
+      spriteId: e3265deef582fb1458ee4502b9525683
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -342,4 +386,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 70, y: 64}
-  previousTextureSize: {x: 128, y: 128}
+  previousTextureSize: {x: 128, y: 256}

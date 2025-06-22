@@ -3981,6 +3981,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1525015652}
     m_Modifications:
+    - target: {fileID: 900137933358373432, guid: 3952da61199ca2d498ae1429a4946ae8, type: 3}
+      propertyPath: _countdown
+      value: 
+      objectReference: {fileID: 8801945591698390247, guid: ea13c4709f662c04082410dccd59d67f, type: 3}
+    - target: {fileID: 900137933358373432, guid: 3952da61199ca2d498ae1429a4946ae8, type: 3}
+      propertyPath: _countdownPrefab
+      value: 
+      objectReference: {fileID: 8801945591698390247, guid: ea13c4709f662c04082410dccd59d67f, type: 3}
+    - target: {fileID: 900137933358373432, guid: 3952da61199ca2d498ae1429a4946ae8, type: 3}
+      propertyPath: _countdownNumbers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4345807352150981249, guid: 3952da61199ca2d498ae1429a4946ae8, type: 3}
       propertyPath: m_Name
       value: Hotdog Table

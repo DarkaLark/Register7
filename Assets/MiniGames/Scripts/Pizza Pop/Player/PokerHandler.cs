@@ -24,7 +24,6 @@ public class PokerHandler : MonoBehaviour
 
     [Header("Player Input Device")]
     private bool _isMouse = false;
-    private bool _isGamepad = false;
 
     void Awake()
     {
@@ -51,7 +50,6 @@ public class PokerHandler : MonoBehaviour
     {
         _cursorPosition = input;
         _isMouse = true;
-        _isGamepad = false;
 
         VisualizeCursor();
     }
@@ -60,7 +58,6 @@ public class PokerHandler : MonoBehaviour
     {
         _cursorPosition += _cursorSpeed * Time.deltaTime * input;
         _isMouse = false;
-        _isGamepad = true;
 
         VisualizeCursor();
     }

@@ -365,7 +365,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &7713236076853348266
 MonoBehaviour:
@@ -379,12 +379,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -499,7 +499,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5224542284967355538
 RectTransform:
   m_ObjectHideFlags: 0
@@ -608,3 +608,5 @@ MonoBehaviour:
   - {fileID: 8146419472757553416}
   - {fileID: 4150960991455616388}
   _durationPerNumber: 1
+  _countdownBeep: {fileID: 8300000, guid: b468db4f83c8e544fb1563fbde511ac8, type: 3}
+  _finishedBeep: {fileID: 8300000, guid: 8fe9fe6f1bfd11f48b30ffd0fe4439d3, type: 3}

@@ -618,17 +618,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8951210582068291905, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9180668002990733953, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
       propertyPath: m_Name
       value: Pizza Pop
-      objectReference: {fileID: 0}
-    - target: {fileID: 9180668002990733953, guid: 8de8b518e674c9a4ab72c1841379a351, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

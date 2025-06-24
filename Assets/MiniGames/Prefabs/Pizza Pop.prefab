@@ -122,6 +122,7 @@ MonoBehaviour:
   _onMousePointerPosition: {fileID: 11400000, guid: bffc5b14128ddaa4ea4416793bdf0ada, type: 2}
   _onGamepadPointerPosition: {fileID: 11400000, guid: 2a3a1af17375a0946bdacfbaed9c8430, type: 2}
   _onPointerClick: {fileID: 11400000, guid: 513a7eeaf024eae48a065e5ec627fbd4, type: 2}
+  _onPizzaClick: {fileID: 11400000, guid: 049e7cb4917bbf84aa9f5242e6679143, type: 2}
   _cursorVisual: {fileID: 2314012746265422305}
   _cursorSpeed: 1000
   _splat: {fileID: 8300000, guid: 93bf305b228d7a24fbf4cfd996d12d8f, type: 3}
@@ -649,6 +650,54 @@ Transform:
   - {fileID: 8310478848530858329}
   m_Father: {fileID: 8461405724033603194}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8107549585603429753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1055041823893870270}
+  - component: {fileID: 2223033552798808659}
+  m_Layer: 0
+  m_Name: ScoreTracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1055041823893870270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8107549585603429753}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8461405724033603194}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2223033552798808659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8107549585603429753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f2988b496f89a47a5f993b6aa0d6b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onBubbleSpawn: {fileID: 11400000, guid: 95e93ae1dc40a734abedde52117b3cb2, type: 2}
+  _onBubblePop: {fileID: 11400000, guid: 8106eacc353bc7d4797b028a836f079b, type: 2}
+  _onPizzaClick: {fileID: 11400000, guid: 049e7cb4917bbf84aa9f5242e6679143, type: 2}
+  _onGiveResults: {fileID: 11400000, guid: 3ed18e670ea78794da70599c038211d6, type: 2}
 --- !u!1 &9159503476335086320
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,7 +800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8461405724033603194
 Transform:
   m_ObjectHideFlags: 0
@@ -772,6 +821,7 @@ Transform:
   - {fileID: 5323741147377146926}
   - {fileID: 1242567209999897822}
   - {fileID: 5963694493231831126}
+  - {fileID: 1055041823893870270}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &441313699825358246
@@ -825,6 +875,10 @@ PrefabInstance:
     - target: {fileID: 8801945591698390247, guid: ea13c4709f662c04082410dccd59d67f, type: 3}
       propertyPath: m_Name
       value: CountDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801945591698390247, guid: ea13c4709f662c04082410dccd59d67f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -937,6 +991,7 @@ MonoBehaviour:
   _bubblePrefab: {fileID: 9127476687491463548, guid: a03026973c6c9fd47b92f42bdd28e707, type: 3}
   _spawnCenter: {fileID: 6762706164720665258}
   _radius: 1
+  _onBubbleSpawn: {fileID: 11400000, guid: 95e93ae1dc40a734abedde52117b3cb2, type: 2}
 --- !u!64 &338313805626619413
 MeshCollider:
   m_ObjectHideFlags: 0

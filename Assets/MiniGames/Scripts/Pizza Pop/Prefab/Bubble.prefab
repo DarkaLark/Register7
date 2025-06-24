@@ -125,3 +125,5 @@ MonoBehaviour:
   _miniTweenSize: 0.15
   _maxTweenSize: 0.2
   _popAudio: {fileID: 8300000, guid: 1683f22b57c453343906d516eb131d31, type: 3}
+  _onBubblePop: {fileID: 11400000, guid: 8106eacc353bc7d4797b028a836f079b, type: 2}
+  _onGiveResults: {fileID: 11400000, guid: 3ed18e670ea78794da70599c038211d6, type: 2}

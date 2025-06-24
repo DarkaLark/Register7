@@ -8,6 +8,8 @@ public class PokerHandler : MonoBehaviour
     [SerializeField] private Vector2GameEvent _onGamepadPointerPosition;
     [SerializeField] private GameEvent _onPointerClick;
 
+    [SerializeField] private GameEvent _onPizzaClick;
+
     [Header("Cursor")]
     [Space(5)]
     [SerializeField] private RectTransform _cursorVisual;
@@ -94,6 +96,7 @@ public class PokerHandler : MonoBehaviour
         {
             if (_audio != null)
                 PlayAudio();
+            _onPizzaClick.Raise();
         }
 
         if (_isMouse == true)

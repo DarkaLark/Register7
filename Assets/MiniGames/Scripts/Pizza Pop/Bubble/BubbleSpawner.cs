@@ -17,6 +17,10 @@ public class BubbleSpawner : MonoBehaviour
     private int _maxBubbles = 10;
     private int _currentBubble = 0;
 
+    [Header("Game Events")]
+    [Space(5)]
+    [SerializeField] private GameEvent _onBubbleSpawn;
+
     void Start()
     {
         _numberOfBubbles = Random.Range(_minBubbles, _maxBubbles);
@@ -32,18 +36,22 @@ public class BubbleSpawner : MonoBehaviour
 
             yield return new WaitForSeconds(nextSpawnTimer);
         }
-
-        Debug.Log("Game Over");
-        ;
     }
 
 #region SpawnBubble func's
         public void SpawnBubble()
         {
             Vector3 spawnPosition = RandomPointOnXZPlane();
-            Instantiate(_bubblePrefab, spawnPosition, Quaternion.identity);
-    
+            GameObject bubbleObj = Instantiate(_bubblePrefab, spawnPosition, Quaternion.identity);
+
+            Bubble bubble = bubbleObj.GetComponent<Bubble>();
+            if (bubble != null)
+            {
+                bubble.IsLastBubble = (_currentBubble == _numberOfBubbles - 1);
+            }
+
             _currentBubble++;
+            _onBubbleSpawn.Raise();
         }
     
         private Vector3 RandomPointOnXZPlane()

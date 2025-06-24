@@ -3,14 +3,27 @@ using DG.Tweening;
 
 public class Bubble : MonoBehaviour
 {
+    [Header("Despawn Timer")]
+    [Space(5)]
     [SerializeField] private float _despawnTimer = 3f;
 
+    [Header("Tween")]
+    [Space(5)]
     private Tween _scaleTween;
     [SerializeField] private float _miniTweenSize = 0.1f;
     [SerializeField] private float _maxTweenSize = 0.2f;
 
+    [Header("Audio")]
+    [Space(5)]
     [SerializeField] AudioClip _popAudio;
     private AudioSource _audio;
+
+    [Header("Game Events")]
+    [Space(5)]
+    [SerializeField] private GameEvent _onBubblePop;
+    [SerializeField] private GameEvent _onGiveResults;
+
+    public bool IsLastBubble { get; set; }
 
     void Awake()
     {
@@ -51,6 +64,8 @@ public class Bubble : MonoBehaviour
         _despawnTimer -= Time.deltaTime;
         if (_despawnTimer <= 0f)
         {
+            if (IsLastBubble)
+                _onGiveResults.Raise();
             Destroy(gameObject);
         }
     }
@@ -62,6 +77,11 @@ public class Bubble : MonoBehaviour
             _audio.pitch = Random.Range(.95f, 1.05f);
             _audio.PlayOneShot(_popAudio);
         }
+
+        _onBubblePop.Raise();
+
+        if (IsLastBubble)
+            _onGiveResults.Raise();
 
         Destroy(gameObject);
     }

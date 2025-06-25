@@ -10,6 +10,8 @@ public class PokerHandler : MonoBehaviour
 
     [SerializeField] private GameEvent _onPizzaClick;
 
+    [SerializeField] private GameEvent _onGiveResults;
+
     [Header("Cursor")]
     [Space(5)]
     [SerializeField] private RectTransform _cursorVisual;

@@ -5,7 +5,6 @@ public class PizzaPopInputHandler : MonoBehaviour
 {
     [SerializeField] private Vector2GameEvent _onMousePointerPosition;
     [SerializeField] private Vector2GameEvent _onGamepadPointerPosition;
-
     [SerializeField] private GameEvent _onPointerClick;
 
     private PlayerInput _playerInput;
@@ -23,21 +22,18 @@ public class PizzaPopInputHandler : MonoBehaviour
 
         _mousePointerPosition = _playerInput.actions["MousePointerPosition"];
         _gamepadPointerPosition = _playerInput.actions["GamepadPointerPosition"];
-
         _pointerClick = _playerInput.actions["PointerClick"];
     }
 
     void OnEnable()
     {
         _mousePointerPosition.performed += OnMousePointerPosition;
-
         _pointerClick.performed += OnPointerClick;
     }
 
     void OnDisable()
     {
         _mousePointerPosition.performed -= OnMousePointerPosition;
-
         _pointerClick.performed -= OnPointerClick;
     }
 

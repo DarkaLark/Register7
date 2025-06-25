@@ -148,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _miniGame: {fileID: 2025391619969224680}
   _onGameStateChanged: {fileID: 11400000, guid: 4cb2b1ea340c5e344839b14c8abd1402, type: 2}
+  _onExitMiniGame: {fileID: 11400000, guid: ece558186631fef498688fb205211e89, type: 2}
 --- !u!1 &825660073923312113
 GameObject:
   m_ObjectHideFlags: 0

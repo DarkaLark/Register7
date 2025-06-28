@@ -1,23 +1,22 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 
 public class LossFeedback : MonoBehaviour
 {
-    [SerializeField] private GameEvent _onPlayerLoss;
-
-    [SerializeField] private ItemInformationGameEvent _sendItemInformation;
-    private string _itemsWanted;
-
-    [SerializeField] private GameObject _backButton;
-
-    private AudioSource _audioSource;
+    [Header("Events")]
     
+    [SerializeField] private GameEvent _onPlayerLoss;
     [SerializeField] private GameEvent _onGenerateDemands;
+    [SerializeField] private ItemInformationGameEvent _sendItemInformation;
+    [SerializeField] private GameEvent _onMiniGameOver;
 
+    private string _itemsWanted;    
+
+    [Header("UI")]
     [Space(5)]
+    private AudioSource _audioSource;
     [SerializeField] TextMeshProUGUI _memberText;
     [SerializeField] AudioClip _wrongBeep;
 
@@ -56,12 +55,11 @@ public class LossFeedback : MonoBehaviour
         TurnStateManager.Instance.SetState(TurnState.Member);
 
         _memberText.color = Color.black;
-        _memberText.text = "I wanted " + _itemsWanted +"!!";
+        _memberText.text = "I wanted " + _itemsWanted + "!!";
 
         _audioSource.PlayOneShot(_wrongBeep);
-        yield return new WaitForSeconds(2);
-        
-            _backButton.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(_backButton);
+
+        yield return new WaitForSeconds(1f);
+        _onMiniGameOver.Raise();
     }
 }

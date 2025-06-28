@@ -1,25 +1,25 @@
 using UnityEngine;
-using TMPro;
 using System.Collections;
-using UnityEngine.EventSystems;
+using TMPro;
 
 public class WonFeedback : MonoBehaviour
 {
+    [Header("Events")]
     [SerializeField] private GameEvent _onPlayerWin;
-
     [SerializeField] private GameEvent _onGenerateDemands;
-    [SerializeField] GameObject _backButton;
+    [SerializeField] private GameEvent _onMiniGameOver;
 
     private AudioSource _audioSource;
 
-    [Space(5)]
     [Header("How Many Rounds")]
+    [Space(5)]
     [SerializeField] private int _numberOfRounds = 2;
     private int _currentRound = 1;
 
+    [Header("UI")]
     [Space(5)]
-    [SerializeField] TextMeshProUGUI _memberText;
-    [SerializeField] AudioClip _correctBeep;
+    [SerializeField] private TextMeshProUGUI _memberText;
+    [SerializeField] private AudioClip _correctBeep;
 
     void Awake()
     {
@@ -51,8 +51,7 @@ public class WonFeedback : MonoBehaviour
 
         if (_currentRound >= _numberOfRounds)
         {
-            _backButton.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(_backButton);
+            _onMiniGameOver.Raise();
         }
         else
         {

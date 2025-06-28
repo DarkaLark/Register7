@@ -36,20 +36,15 @@ public class CompareResults : MonoBehaviour
         {
             _expectedItems.Add(item.itemID);
         }
-
-        Debug.Log("Expected sequence: " + string.Join(", ", _expectedItems));
     }
 
     private void ReadItem(PossibleItems item)
     {
-        Debug.Log(item + " being pressed");
         if (TurnStateManager.Instance.CurrentState == TurnState.Member) return;
 
         if (item == _expectedItems[_currentItemIndex])
         {
-            Debug.Log("Correct");
             _currentItemIndex++;
-            Debug.Log(_currentItemIndex + " out of " + _expectedItems.Count);
 
             if (_currentItemIndex >= _expectedItems.Count)
             {

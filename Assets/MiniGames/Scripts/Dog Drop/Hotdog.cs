@@ -1,6 +1,4 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class Hotdog : MonoBehaviour
 {
@@ -13,9 +11,11 @@ public class Hotdog : MonoBehaviour
 
     [Space(5)]
     [SerializeField] private GameObject _bun;
-    [SerializeField] private GameObject _backButton;
 
+    [Header("Events")]
+    [Space(5)]
     [SerializeField] private GameEvent _onHotdogDrop;
+    [SerializeField] private GameEvent _onMiniGameOver;
 
     private float _speedTimer = .2f;
     private bool _drop = false;
@@ -24,7 +24,6 @@ public class Hotdog : MonoBehaviour
 
     void OnEnable()
     {
-        Debug.Log("OnEnable called in: Hotdog");
         _onHotdogDrop.Register(DropHotdog);
     }
 
@@ -48,7 +47,7 @@ public class Hotdog : MonoBehaviour
         }  
     }
 
-    void DropHotdog()
+    private void DropHotdog()
     {
         _drop = true;
     }
@@ -61,8 +60,7 @@ public class Hotdog : MonoBehaviour
             _drop = false;
             _currentDropSpeed = 0;
             transform.SetParent(other.transform, true);
-            _backButton.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(_backButton);
+            _onMiniGameOver.Raise();
         }
     }
 
@@ -70,12 +68,8 @@ public class Hotdog : MonoBehaviour
     {
         _hotdog.position += Vector3.down * (_currentDropSpeed * _gravity) * Time.deltaTime;
         if (_bun.transform.position.y + _outOfBoundsOffset > _hotdog.position.y)
-        {
-            TextMeshProUGUI backButtonText = _backButton.GetComponentInChildren<TextMeshProUGUI>();
-            backButtonText.text = "Wiener On The Floor!";
-            
-            _backButton.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(_backButton);
+        {            
+            _onMiniGameOver.Raise();
             Destroy(gameObject);
         }
 

@@ -610,3 +610,4 @@ MonoBehaviour:
   _durationPerNumber: 1
   _countdownBeep: {fileID: 8300000, guid: b468db4f83c8e544fb1563fbde511ac8, type: 3}
   _finishedBeep: {fileID: 8300000, guid: 8fe9fe6f1bfd11f48b30ffd0fe4439d3, type: 3}
+  _onCountdownFinished: {fileID: 11400000, guid: 41dba65f05b7f584494ee1a97e4ec0df, type: 2}

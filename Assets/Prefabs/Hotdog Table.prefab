@@ -69,8 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df957cfc8c66c2a4d9916ba4712a397f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _miniGame: {fileID: 2025391619969224680, guid: 96200aa267292ad4c868ae023affcd9e, type: 3}
-  _onGameStateChanged: {fileID: 11400000, guid: 4cb2b1ea340c5e344839b14c8abd1402, type: 2}
+  _miniGamePrefab: {fileID: 2025391619969224680, guid: 96200aa267292ad4c868ae023affcd9e, type: 3}
 --- !u!114 &4053163603422219406
 MonoBehaviour:
   m_ObjectHideFlags: 0

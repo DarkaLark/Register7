@@ -14,6 +14,9 @@ public class CountdownScript : MonoBehaviour
 
     private int _scaleSizeMultiplier = 9;
 
+    [Header("Events")]
+    [SerializeField] private GameEvent _onCountdownFinished;
+
     void Awake()
     {
         _audio = FindFirstObjectByType<AudioSource>();
@@ -53,6 +56,7 @@ public class CountdownScript : MonoBehaviour
             number.SetActive(false);
         }
 
+        _onCountdownFinished.Raise();
         Time.timeScale = 1;
         Destroy(gameObject);
     }

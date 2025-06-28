@@ -540,6 +540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 472735386276657587}
+  - component: {fileID: 5488851823730892158}
   m_Layer: 0
   m_Name: MemberSays
   m_TagString: Untagged
@@ -568,6 +569,20 @@ Transform:
   - {fileID: 9196107514077471105}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5488851823730892158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3919050075194717891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7740d3528ed23014c82567c5aa9b1480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _miniGameCamera: {fileID: 0}
+  _onGameStateChanged: {fileID: 11400000, guid: 4cb2b1ea340c5e344839b14c8abd1402, type: 2}
 --- !u!1 &4282022553614947037
 GameObject:
   m_ObjectHideFlags: 0

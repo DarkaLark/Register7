@@ -2,12 +2,10 @@ using UnityEngine;
 
 public class StartMiniGame : MonoBehaviour, IInteractable
 {
-    [SerializeField] private GameObject _miniGame;
-    [SerializeField] private GameStateGameEvent _onGameStateChanged;
+    [SerializeField] private GameObject _miniGamePrefab;
 
     public void Interact()
     {
-        Instantiate(_miniGame);
-        _onGameStateChanged.Raise(GameState.MiniGame);
+        Instantiate(_miniGamePrefab);
     }
 }

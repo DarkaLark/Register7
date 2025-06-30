@@ -3,12 +3,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    public enum InputType
-    {
-        KeyboardAndMouse,
-        XBoxController
-    }
-
     [SerializeField] private GameEvent _onInteractPress;
     [SerializeField] private GameEvent _onAdvanceDialoguePress;
     [SerializeField] private Vector2GameEvent _onMoveInput;

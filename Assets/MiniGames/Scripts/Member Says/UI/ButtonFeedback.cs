@@ -9,7 +9,7 @@ public class ButtonFeedback : MonoBehaviour
 
     [SerializeField] private List<Button> _buttons;
 
-    private float _waitTime = 0.15f;
+    private readonly float _waitTime = 0.15f;
 
     void OnEnable()
     {

@@ -1,11 +1,18 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class InputDeviceDetector : MonoBehaviour
 {
     public InputControlScheme InputControlScheme { get; private set; }
+    [Header("Player Input")]
+    [Space(5)]
     [SerializeField] private PlayerInput _playerInput;
 
+    [Header("Event")]
+    [Space(5)]
+    [SerializeField] private GameEvent _onPlayerInputChanged;
+    [SerializeField] private GameEvent _onInputChanged;
     private void OnEnable()
     {
         _playerInput.onActionTriggered += OnAnyButtonPress;
@@ -25,6 +32,8 @@ public class InputDeviceDetector : MonoBehaviour
                 if (InputControlScheme != InputControlScheme.Gamepad)
                 {
                     InputControlScheme = InputControlScheme.Gamepad;
+                    
+                    _onInputChanged.Raise();
                     print("Switching to Gamepad");
                 }
 
@@ -35,6 +44,8 @@ public class InputDeviceDetector : MonoBehaviour
                 if (InputControlScheme != InputControlScheme.KeyboardMouse)
                 {
                     InputControlScheme = InputControlScheme.KeyboardMouse;
+                    
+                    _onInputChanged.Raise();
                     print("Switching to Mouse and Keyboard");
                 }
 

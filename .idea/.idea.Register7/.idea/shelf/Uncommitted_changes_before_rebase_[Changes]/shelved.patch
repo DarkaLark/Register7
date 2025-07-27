@@ -1,0 +1,87 @@
+Index: .idea/.idea.Register7/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"5a2463c5-058b-4307-8aa1-078bb93e5981\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/.idea.Register7/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/.idea.Register7/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assets/Models/BlankHuman/Player.prefab\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assets/Models/BlankHuman/Player.prefab\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assets/Prefabs/Player.prefab\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assets/Prefabs/Player.prefab\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assets/Scenes/Caelin's Scene.unity\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assets/Scenes/Caelin's Scene.unity\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assets/Scenes/Test Scene.unity\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assets/Scenes/Test Scene.unity.meta\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assets/Scripts/Interactables/CarryableObject.cs\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assets/Scripts/Interactables/CarryableObject.cs\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assets/Scripts/Interactables/PlayerItemCarrier.cs\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assets/Scripts/Interactables/PlayerItemCarrier.cs\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assets/Scripts/Player/PlayerInputHandler.cs\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assets/Scripts/Player/PlayerInputHandler.cs\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;ohllamalow&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/DarkaLark/Register7.git&quot;,\r\n    &quot;accountId&quot;: &quot;fe0d18a1-8218-4cc7-9569-f799f4c4b9e2&quot;\r\n  }\r\n}</component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/MiniGames/Scripts/Helper/StartMiniGame.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"mock://E:/Unity/Project/Register7/Assets/Scenes/Caelin's Scene.unity\" root0=\"SKIP_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerInputHandler.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"MetaFilesCheckinStateConfiguration\" checkMetaFiles=\"true\" />\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 3\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"30In6HSQ7AcWaBEXh2yepH8ZjLw\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;Refactor&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\"Attach to Unity Editor.Attach to Unity Editor\">\r\n    <configuration name=\"Start Unity\" type=\"RunUnityExe\" factoryName=\"Unity Executable\">\r\n      <option name=\"EXE_PATH\" value=\"E:\\Unity\\6000.0.47f1\\Editor\\Unity.exe\" />\r\n      <option name=\"PROGRAM_PARAMETERS\" value=\"-projectPath E:\\Unity\\Project\\Register7 -debugCodeOptimization\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"E:\\Unity\\Project\\Register7\" />\r\n      <option name=\"PASS_PARENT_ENVS\" value=\"1\" />\r\n      <option name=\"USE_EXTERNAL_CONSOLE\" value=\"0\" />\r\n      <option name=\"ENV_FILE_PATHS\" value=\"\" />\r\n      <option name=\"REDIRECT_INPUT_PATH\" value=\"\" />\r\n      <option name=\"PTY_MODE\" value=\"Auto\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Unit Tests (batch mode)\" type=\"RunUnityExe\" factoryName=\"Unity Executable\">\r\n      <option name=\"EXE_PATH\" value=\"E:\\Unity\\6000.0.47f1\\Editor\\Unity.exe\" />\r\n      <option name=\"PROGRAM_PARAMETERS\" value=\"-runTests -batchmode -projectPath E:\\Unity\\Project\\Register7 -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"E:\\Unity\\Project\\Register7\" />\r\n      <option name=\"PASS_PARENT_ENVS\" value=\"1\" />\r\n      <option name=\"USE_EXTERNAL_CONSOLE\" value=\"0\" />\r\n      <option name=\"ENV_FILE_PATHS\" value=\"\" />\r\n      <option name=\"REDIRECT_INPUT_PATH\" value=\"\" />\r\n      <option name=\"PTY_MODE\" value=\"Auto\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Attach to Unity Editor &amp; Play\" type=\"UNITY_DEBUG_RUN_CONFIGURATION\" factoryName=\"UNITY_ATTACH_AND_PLAY\" show_console_on_std_err=\"false\" show_console_on_std_out=\"false\" port=\"50000\" address=\"localhost\">\r\n      <option name=\"allowRunningInParallel\" value=\"false\" />\r\n      <option name=\"listenPortForConnections\" value=\"false\" />\r\n      <option name=\"pid\" />\r\n      <option name=\"projectPathOnTarget\" />\r\n      <option name=\"runtimes\">\r\n        <list />\r\n      </option>\r\n      <option name=\"selectedOptions\">\r\n        <list />\r\n      </option>\r\n      <option name=\"useMixedMode\" value=\"false\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Attach to Unity Editor\" type=\"UNITY_DEBUG_RUN_CONFIGURATION\" factoryName=\"Unity Debug\" show_console_on_std_err=\"false\" show_console_on_std_out=\"false\" port=\"50000\" address=\"localhost\">\r\n      <option name=\"allowRunningInParallel\" value=\"false\" />\r\n      <option name=\"listenPortForConnections\" value=\"false\" />\r\n      <option name=\"pid\" />\r\n      <option name=\"projectPathOnTarget\" />\r\n      <option name=\"runtimes\">\r\n        <list />\r\n      </option>\r\n      <option name=\"selectedOptions\">\r\n        <list />\r\n      </option>\r\n      <option name=\"useMixedMode\" value=\"false\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"5a2463c5-058b-4307-8aa1-078bb93e5981\" name=\"Changes\" comment=\"\" />\r\n      <created>1753323778193</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1753323778193</updated>\r\n      <workItem from=\"1753323779343\" duration=\"76000\" />\r\n      <workItem from=\"1753323966153\" duration=\"303000\" />\r\n      <workItem from=\"1753324776662\" duration=\"130000\" />\r\n      <workItem from=\"1753325081178\" duration=\"16000\" />\r\n      <workItem from=\"1753325113230\" duration=\"107000\" />\r\n      <workItem from=\"1753325231345\" duration=\"142000\" />\r\n      <workItem from=\"1753325512049\" duration=\"1701000\" />\r\n      <workItem from=\"1753327768776\" duration=\"3003000\" />\r\n      <workItem from=\"1753385656113\" duration=\"124000\" />\r\n      <workItem from=\"1753385856430\" duration=\"136000\" />\r\n      <workItem from=\"1753386117986\" duration=\"10000\" />\r\n      <workItem from=\"1753386254476\" duration=\"2458000\" />\r\n      <workItem from=\"1753389454711\" duration=\"634000\" />\r\n      <workItem from=\"1753428386399\" duration=\"934000\" />\r\n      <workItem from=\"1753429354390\" duration=\"2188000\" />\r\n      <workItem from=\"1753474788693\" duration=\"2057000\" />\r\n      <workItem from=\"1753593562061\" duration=\"2533000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"push for help with drop item\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1753593741987</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1753593741987</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"UnityCheckinConfiguration\" checkUnsavedScenes=\"true\" />\r\n  <component name=\"UnityProjectConfiguration\" hasMinimizedUI=\"true\" />\r\n  <component name=\"UnityProjectDiscoverer\">\r\n    <option name=\"hasUnityReference\" value=\"true\" />\r\n    <option name=\"unityProject\" value=\"true\" />\r\n    <option name=\"unityProjectFolder\" value=\"true\" />\r\n  </component>\r\n  <component name=\"UnityUnitTestConfiguration\" currentTestLauncher=\"Both\" />\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"CLEAR_INITIAL_COMMIT_MESSAGE\" value=\"true\" />\r\n    <MESSAGE value=\"push for help with drop item\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"push for help with drop item\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"DotNet_Exception_Breakpoints\">\r\n          <properties exception=\"System.OperationCanceledException\" breakIfHandledByOtherCode=\"false\" displayValue=\"System.OperationCanceledException\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n        <breakpoint enabled=\"true\" type=\"DotNet_Exception_Breakpoints\">\r\n          <properties exception=\"System.Threading.Tasks.TaskCanceledException\" breakIfHandledByOtherCode=\"false\" displayValue=\"System.Threading.Tasks.TaskCanceledException\" />\r\n          <option name=\"timeStamp\" value=\"2\" />\r\n        </breakpoint>\r\n        <breakpoint enabled=\"true\" type=\"DotNet_Exception_Breakpoints\">\r\n          <properties exception=\"System.Threading.ThreadAbortException\" breakIfHandledByOtherCode=\"false\" displayValue=\"System.Threading.ThreadAbortException\" />\r\n          <option name=\"timeStamp\" value=\"3\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.idea.Register7/.idea/workspace.xml b/.idea/.idea.Register7/.idea/workspace.xml
+--- a/.idea/.idea.Register7/.idea/workspace.xml	(revision 1078746eb384cd10d76beaa034b0a366d3896d12)
++++ b/.idea/.idea.Register7/.idea/workspace.xml	(date 1753599706169)
+@@ -4,17 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="5a2463c5-058b-4307-8aa1-078bb93e5981" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Register7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Register7/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assets/Models/BlankHuman/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BlankHuman/Player.prefab" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Caelin's Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Caelin's Scene.unity" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test Scene.unity" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test Scene.unity.meta" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactables/CarryableObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactables/CarryableObject.cs" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactables/PlayerItemCarrier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactables/PlayerItemCarrier.cs" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInputHandler.cs" afterDir="false" />
+-    </list>
++    <list default="true" id="5a2463c5-058b-4307-8aa1-078bb93e5981" name="Changes" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -42,6 +32,7 @@
+ }</component>
+   <component name="HighlightingSettingsPerFile">
+     <setting file="file://$PROJECT_DIR$/Assets/MiniGames/Scripts/Helper/StartMiniGame.cs" root0="FORCE_HIGHLIGHTING" />
++    <setting file="mock://E:/Unity/Project/Register7/Assets/Scenes/Caelin's Scene.unity" root0="SKIP_HIGHLIGHTING" />
+     <setting file="mock://E:/Unity/Project/Register7/Assets/Scenes/Caelin's Scene.unity" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerInputHandler.cs" root0="FORCE_HIGHLIGHTING" />
+   </component>
+@@ -147,7 +138,7 @@
+       <workItem from="1753428386399" duration="934000" />
+       <workItem from="1753429354390" duration="2188000" />
+       <workItem from="1753474788693" duration="2057000" />
+-      <workItem from="1753593562061" duration="2533000" />
++      <workItem from="1753593562061" duration="2881000" />
+     </task>
+     <task id="LOCAL-00001" summary="push for help with drop item">
+       <option name="closed" value="true" />
+@@ -157,7 +148,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1753593741987</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="finished feature to carry items around">
++      <option name="closed" value="true" />
++      <created>1753599684677</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1753599684677</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -171,10 +170,22 @@
+     <option name="unityProjectFolder" value="true" />
+   </component>
+   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
+   <component name="VcsManagerConfiguration">
+     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+     <MESSAGE value="push for help with drop item" />
+-    <option name="LAST_COMMIT_MESSAGE" value="push for help with drop item" />
++    <MESSAGE value="finished feature to carry items around" />
++    <option name="LAST_COMMIT_MESSAGE" value="finished feature to carry items around" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>

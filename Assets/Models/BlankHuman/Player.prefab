@@ -668,6 +668,7 @@ GameObject:
   - component: {fileID: 9031858064214987830}
   - component: {fileID: 5916703149891232678}
   - component: {fileID: 8358066372805104376}
+  - component: {fileID: 6418957811669348337}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -760,7 +761,7 @@ MonoBehaviour:
   _sprintDuration: 1
   _sprintCooldown: 0
   _rb: {fileID: 7428600109286748875}
-  _rotationSpeed: 60
+  _rotationSpeed: 15
   _jumpForce: 3
   _animator: {fileID: 1470852053533314087}
   _inputHandler: {fileID: 5916703149891232678}
@@ -814,7 +815,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onInteractPress: {fileID: 11400000, guid: a8be889c21aa0dd4eab5dc8dd32b7b16, type: 2}
-  _onAdvanceDialoguePress: {fileID: 11400000, guid: 00cfe857662703f4994a1331102badee, type: 2}
   _onMoveInput: {fileID: 11400000, guid: 31debce583e4aee4f9eb8306b541ba79, type: 2}
   _onSprintDown: {fileID: 11400000, guid: a43c841eb6046e1488f15597a1233641, type: 2}
   _onDialogueStateChanged: {fileID: 11400000, guid: f87a9f2288713bf42b1777efb2e95765, type: 2}
@@ -848,6 +848,20 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 1721524607910327048}
+--- !u!114 &6418957811669348337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4053633520838757941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0328b974ec554b05a23048d8a30999ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _carryAnchor: {fileID: 5348983831984049049}
+  _carryOffset: {x: 0, y: 1, z: 0.7}
 --- !u!1 &4189682123853394921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,7 +1555,7 @@ GameObject:
   - component: {fileID: 5348983831984049049}
   - component: {fileID: 1470852053533314087}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Model
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 4413069990958145466}
   - component: {fileID: 8471552274561556498}
   - component: {fileID: 1939737622212152127}
+  - component: {fileID: 6714255795064105949}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -416,7 +417,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onInteractPress: {fileID: 11400000, guid: a8be889c21aa0dd4eab5dc8dd32b7b16, type: 2}
-  _onAdvanceDialoguePress: {fileID: 11400000, guid: 00cfe857662703f4994a1331102badee, type: 2}
   _onMoveInput: {fileID: 11400000, guid: 31debce583e4aee4f9eb8306b541ba79, type: 2}
   _onSprintDown: {fileID: 11400000, guid: a43c841eb6046e1488f15597a1233641, type: 2}
   _onDialogueStateChanged: {fileID: 11400000, guid: f87a9f2288713bf42b1777efb2e95765, type: 2}
@@ -450,6 +450,20 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 2053242775182749133}
+--- !u!114 &6714255795064105949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111388901371292543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0328b974ec554b05a23048d8a30999ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _carryAnchor: {fileID: 6440988108541179887}
+  _carryOffset: {x: 0, y: 1, z: 0.7}
 --- !u!1 &2142324100222316157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,7 +1173,7 @@ GameObject:
   - component: {fileID: 6440988108541179887}
   - component: {fileID: 5005874514819582646}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Model
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -9,8 +9,6 @@ public class PlayerInputHandler : MonoBehaviour
 
     [SerializeField] private DialogueStateGameEvent _onDialogueStateChanged;
     
-    private PlayerItemCarrier _playerItemCarrier;
-    
     private bool _canInteract = true;
 
     public Vector2 MoveInput { get; private set; }
@@ -18,6 +16,7 @@ public class PlayerInputHandler : MonoBehaviour
     private bool _canAdvanceDialogue;
 
     private PlayerInput _playerInput;
+    private PlayerItemCarrier _playerItemCarrier;
 
     private InputAction _playerInteract;
     private InputAction _playerMove;
@@ -70,9 +69,10 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void OnInteract(InputAction.CallbackContext context)
     {
-        if (_playerItemCarrier.HasItem)
+        if (_playerItemCarrier != null && _playerItemCarrier.HasItem)
         {
             _playerItemCarrier.DropItem();
+            return;
         }
             
         if (_canInteract)

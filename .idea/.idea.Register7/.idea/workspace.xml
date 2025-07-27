@@ -5,27 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a2463c5-058b-4307-8aa1-078bb93e5981" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/GameState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/GameState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interactables.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interactables/CarryableObject.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interactables/CarryableObject.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interactables/PlayerItemCarrier.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interactables/PlayerItemCarrier.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiniGames/Prefabs/Pizza Pop.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MiniGames/Prefabs/Pizza Pop.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiniGames/Scripts/Helper/InputContextSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MiniGames/Scripts/Helper/InputContextSwitcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Register7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Register7/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Models/BlankHuman/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/BlankHuman/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ShoppingCart 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ShoppingCart 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Caelin's Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Caelin's Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Mini Game Test Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Mini Game Test Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/GameStateManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/GameStateManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterMovementBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterMovementBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test Scene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test Scene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactables/CarryableObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactables/CarryableObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactables/PlayerItemCarrier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactables/PlayerItemCarrier.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInputHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +42,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/MiniGames/Scripts/Helper/StartMiniGame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://E:/Unity/Project/Register7/Assets/Scenes/Caelin's Scene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerInputHandler.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -158,7 +147,17 @@
       <workItem from="1753428386399" duration="934000" />
       <workItem from="1753429354390" duration="2188000" />
       <workItem from="1753474788693" duration="2057000" />
+      <workItem from="1753593562061" duration="2533000" />
     </task>
+    <task id="LOCAL-00001" summary="push for help with drop item">
+      <option name="closed" value="true" />
+      <created>1753593741987</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1753593741987</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +173,8 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="push for help with drop item" />
+    <option name="LAST_COMMIT_MESSAGE" value="push for help with drop item" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

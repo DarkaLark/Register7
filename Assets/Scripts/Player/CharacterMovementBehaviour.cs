@@ -60,7 +60,7 @@ public class CharacterMovementBehaviour : MonoBehaviour
     {
         if (!_canMove) return;
 
-        ReduceSprintCD();
+        ReduceSprintCd();
 
         TryJumping();
 
@@ -106,8 +106,7 @@ public class CharacterMovementBehaviour : MonoBehaviour
         }
     }
 
-    private void ReduceSprintCD()
-
+    private void ReduceSprintCd()
     {
         if (!_canMove) return;
 
@@ -151,9 +150,9 @@ public class CharacterMovementBehaviour : MonoBehaviour
     #region FixedUpdate() funcs
     private Vector3 GetTargetVelocity()
     {
-        float currentSpeed = _isSprinting ? _sprintSpeed : _speed;
+        var currentSpeed = _isSprinting ? _sprintSpeed : _speed;
 
-        Vector3 targetVelocity = _inputVector * currentSpeed;
+        var targetVelocity = _inputVector * currentSpeed;
         targetVelocity.y = _rb.linearVelocity.y;
 
         return targetVelocity;

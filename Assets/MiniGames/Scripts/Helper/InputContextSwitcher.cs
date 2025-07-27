@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputContextSwitcher : MonoBehaviour
+public class  InputContextSwitcher : MonoBehaviour
 {
     [SerializeField] private GameStateGameEvent _onGameStateChanged;
     [SerializeField] private ListOfMiniGames.MiniGame _miniGame;

@@ -2,10 +2,13 @@ using UnityEngine;
 
 public class CarryableObject : MonoBehaviour, IInteractable
 {
+    [SerializeField] private Vector3 _itemOffset = new (0f, 1f, .7f);
+
+    
     private Rigidbody _rb;
     private Collider _collider;
     private PlayerItemCarrier _carrier;
-
+    
     void Awake()
     {
         TryGetComponent(out _rb);
@@ -23,7 +26,7 @@ public class CarryableObject : MonoBehaviour, IInteractable
         _carrier = FindFirstObjectByType<PlayerItemCarrier>();
         if (_carrier != null)
         {
-            _carrier.PickUpItem(this);
+            _carrier.PickUpItem(this, _itemOffset);
         }
     }
 

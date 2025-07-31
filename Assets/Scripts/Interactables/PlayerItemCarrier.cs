@@ -3,20 +3,19 @@ using UnityEngine;
 public class PlayerItemCarrier : MonoBehaviour
 {
     [SerializeField] private Transform _carryAnchor;
-    [SerializeField] private Vector3 _carryOffset = new Vector3(0f, 1f, .7f);
 
     private CarryableObject _currentItem;
 
     public bool HasItem => _currentItem != null;
 
-    public void PickUpItem(CarryableObject item)
+    public void PickUpItem(CarryableObject item, Vector3 offset)
     {
         if (HasItem) return;
 
         _currentItem = item;
         item.SetCarrier(this);
         item.transform.SetParent(_carryAnchor);
-        item.transform.localPosition = _carryOffset;
+        item.transform.localPosition = offset;
     }
 
     public void DropItem()

@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="823ed219-66bf-4d68-834c-94e5a2a1fc64" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interactables/PlayerObjectPusher.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interactables/PlayerObjectPusher.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Register7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Register7/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FlatCart.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FlatCart.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ShoppingCart.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ShoppingCart.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Moving Object Scenes/Carry Item Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Moving Object Scenes/Carry Item Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Moving Object Scenes/Pushable Object Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Moving Object Scenes/Pushable Object Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactables/CarryableObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactables/CarryableObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactables/PlayerItemCarrier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactables/PlayerItemCarrier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactables/PlayerObjectPusher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactables/PlayerObjectPusher.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactables/PushableObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactables/PushableObject.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

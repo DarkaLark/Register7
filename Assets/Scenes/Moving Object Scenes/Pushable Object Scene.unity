@@ -234,6 +234,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pusherAnchor: {fileID: 369478156}
+--- !u!4 &251652635 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6510076431958283026, guid: 4c6724d1a66ee54499489a4737e8aee7, type: 3}
+  m_PrefabInstance: {fileID: 1211144922}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &337351108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -252,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1435771363073626400, guid: 1d54b71f755a18c41a1d076a3ad8d3d0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.0513046
+      value: 1.45
       objectReference: {fileID: 0}
     - target: {fileID: 1435771363073626400, guid: 1d54b71f755a18c41a1d076a3ad8d3d0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -286,6 +291,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlatCart
       objectReference: {fileID: 0}
+    - target: {fileID: 6889341486193092327, guid: 1d54b71f755a18c41a1d076a3ad8d3d0, type: 3}
+      propertyPath: _pushPoint
+      value: 
+      objectReference: {fileID: 251652635}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -588,6 +597,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5427004458691839821, guid: b3e609e7f34d51e44a337beacffbc0a6, type: 3}
+      propertyPath: _pushPoint
+      value: 
+      objectReference: {fileID: 251652635}
     - target: {fileID: 5427004458691839821, guid: b3e609e7f34d51e44a337beacffbc0a6, type: 3}
       propertyPath: _pushPoint.x
       value: 1

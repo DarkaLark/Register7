@@ -8,15 +8,25 @@ public class PlayerObjectPusher : MonoBehaviour
     
     public bool HasItem => _currentItem != null;
 
-    public void StartPushing(PushableObject item, Vector3 pushPoint)
+    public void StartPushing(PushableObject item)
     {
         if (HasItem) return;
         Debug.Log("StartPushing");
         
-        gameObject.transform.localPosition = pushPoint;
+        if (item != null)
+        {
+            Transform target = item.PushPoint;
+            if (target != null)
+            {
+                transform.SetPositionAndRotation(target.position, target.rotation);
+            }
+        }
 
         item.SetPusher(this);
-        item.transform.SetParent(_pusherAnchor);
+        if (_pusherAnchor != null)
+        {
+            item.transform.SetParent(_pusherAnchor, true);
+        }
         _currentItem = item;
     }
 
@@ -25,7 +35,8 @@ public class PlayerObjectPusher : MonoBehaviour
         if (!HasItem) return;
         Debug.Log("StopPushing");
         
-        _currentItem.SetPusher(this);
+        _currentItem.transform.SetParent(null, true);
+        _currentItem.SetPusher(null);
         _currentItem = null;
     }
 }

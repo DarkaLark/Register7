@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class PushableObject  : MonoBehaviour, IInteractable
 {
-    [SerializeField] private Vector3 _pushPoint = new ();
+    [SerializeField] private Transform _pushPoint;
+    public Transform PushPoint => _pushPoint;
     [SerializeField] private float _pushMass = 1f;
     private float _originalMass;
     
@@ -28,7 +29,7 @@ public class PushableObject  : MonoBehaviour, IInteractable
         _pusher = FindFirstObjectByType<PlayerObjectPusher>();
         if (_pusher != null)
         {
-            _pusher.StartPushing(this, _pushPoint);
+            _pusher.StartPushing(this);
         }
     }
     
